@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "GTsOKp6YWps=",
+  "success": true,
+  "projectFilePath": "/Users/samirhebibov/Desktop/portfolio-back/src/Presentation/Portfolio.WebAPI/Portfolio.WebAPI.csproj",
+  "expectedPackageFiles": [
+    "/Users/samirhebibov/.nuget/packages/microsoft.aspnetcore.openapi/9.0.4/microsoft.aspnetcore.openapi.9.0.4.nupkg.sha512",
+    "/Users/samirhebibov/.nuget/packages/microsoft.openapi/1.6.17/microsoft.openapi.1.6.17.nupkg.sha512"
+  ],
+  "logs": []
+}

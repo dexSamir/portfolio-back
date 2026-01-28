@@ -1,0 +1,11 @@
+/Users/samirhebibov/Desktop/portfolio-back/src/Core/Portfolio.Common/bin/Debug/net9.0/Portfolio.Common.deps.json
+/Users/samirhebibov/Desktop/portfolio-back/src/Core/Portfolio.Common/bin/Debug/net9.0/Portfolio.Common.dll
+/Users/samirhebibov/Desktop/portfolio-back/src/Core/Portfolio.Common/bin/Debug/net9.0/Portfolio.Common.pdb
+/Users/samirhebibov/Desktop/portfolio-back/src/Core/Portfolio.Common/obj/Debug/net9.0/Portfolio.Common.GeneratedMSBuildEditorConfig.editorconfig
+/Users/samirhebibov/Desktop/portfolio-back/src/Core/Portfolio.Common/obj/Debug/net9.0/Portfolio.Common.AssemblyInfoInputs.cache
+/Users/samirhebibov/Desktop/portfolio-back/src/Core/Portfolio.Common/obj/Debug/net9.0/Portfolio.Common.AssemblyInfo.cs
+/Users/samirhebibov/Desktop/portfolio-back/src/Core/Portfolio.Common/obj/Debug/net9.0/Portfolio.Common.csproj.CoreCompileInputs.cache
+/Users/samirhebibov/Desktop/portfolio-back/src/Core/Portfolio.Common/obj/Debug/net9.0/Portfolio.Common.dll
+/Users/samirhebibov/Desktop/portfolio-back/src/Core/Portfolio.Common/obj/Debug/net9.0/refint/Portfolio.Common.dll
+/Users/samirhebibov/Desktop/portfolio-back/src/Core/Portfolio.Common/obj/Debug/net9.0/Portfolio.Common.pdb
+/Users/samirhebibov/Desktop/portfolio-back/src/Core/Portfolio.Common/obj/Debug/net9.0/ref/Portfolio.Common.dll

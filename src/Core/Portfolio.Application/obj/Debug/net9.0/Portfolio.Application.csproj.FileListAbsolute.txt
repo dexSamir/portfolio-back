@@ -1,0 +1,17 @@
+/Users/samirhebibov/Desktop/portfolio-back/src/Core/Portfolio.Application/bin/Debug/net9.0/Portfolio.Application.deps.json
+/Users/samirhebibov/Desktop/portfolio-back/src/Core/Portfolio.Application/bin/Debug/net9.0/Portfolio.Application.dll
+/Users/samirhebibov/Desktop/portfolio-back/src/Core/Portfolio.Application/bin/Debug/net9.0/Portfolio.Application.pdb
+/Users/samirhebibov/Desktop/portfolio-back/src/Core/Portfolio.Application/bin/Debug/net9.0/Portfolio.Common.dll
+/Users/samirhebibov/Desktop/portfolio-back/src/Core/Portfolio.Application/bin/Debug/net9.0/Portfolio.Domain.dll
+/Users/samirhebibov/Desktop/portfolio-back/src/Core/Portfolio.Application/bin/Debug/net9.0/Portfolio.Domain.pdb
+/Users/samirhebibov/Desktop/portfolio-back/src/Core/Portfolio.Application/bin/Debug/net9.0/Portfolio.Common.pdb
+/Users/samirhebibov/Desktop/portfolio-back/src/Core/Portfolio.Application/obj/Debug/net9.0/Portfolio.Application.csproj.AssemblyReference.cache
+/Users/samirhebibov/Desktop/portfolio-back/src/Core/Portfolio.Application/obj/Debug/net9.0/Portfolio.Application.GeneratedMSBuildEditorConfig.editorconfig
+/Users/samirhebibov/Desktop/portfolio-back/src/Core/Portfolio.Application/obj/Debug/net9.0/Portfolio.Application.AssemblyInfoInputs.cache
+/Users/samirhebibov/Desktop/portfolio-back/src/Core/Portfolio.Application/obj/Debug/net9.0/Portfolio.Application.AssemblyInfo.cs
+/Users/samirhebibov/Desktop/portfolio-back/src/Core/Portfolio.Application/obj/Debug/net9.0/Portfolio.Application.csproj.CoreCompileInputs.cache
+/Users/samirhebibov/Desktop/portfolio-back/src/Core/Portfolio.Application/obj/Debug/net9.0/Portfoli.B086831A.Up2Date
+/Users/samirhebibov/Desktop/portfolio-back/src/Core/Portfolio.Application/obj/Debug/net9.0/Portfolio.Application.dll
+/Users/samirhebibov/Desktop/portfolio-back/src/Core/Portfolio.Application/obj/Debug/net9.0/refint/Portfolio.Application.dll
+/Users/samirhebibov/Desktop/portfolio-back/src/Core/Portfolio.Application/obj/Debug/net9.0/Portfolio.Application.pdb
+/Users/samirhebibov/Desktop/portfolio-back/src/Core/Portfolio.Application/obj/Debug/net9.0/ref/Portfolio.Application.dll
