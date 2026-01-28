@@ -17,3 +17,4 @@
 /Users/samirhebibov/Desktop/portfolio-back/src/Infrastructure/Portfolio.Persistence/obj/Debug/net9.0/refint/Portfolio.Persistence.dll
 /Users/samirhebibov/Desktop/portfolio-back/src/Infrastructure/Portfolio.Persistence/obj/Debug/net9.0/Portfolio.Persistence.pdb
 /Users/samirhebibov/Desktop/portfolio-back/src/Infrastructure/Portfolio.Persistence/obj/Debug/net9.0/ref/Portfolio.Persistence.dll
+/Users/samirhebibov/Desktop/portfolio-back/src/Infrastructure/Portfolio.Persistence/obj/Debug/net9.0/Portfolio.Persistence.sourcelink.json

@@ -9,3 +9,4 @@
 /Users/samirhebibov/Desktop/portfolio-back/src/Core/Portfolio.Common/obj/Debug/net9.0/refint/Portfolio.Common.dll
 /Users/samirhebibov/Desktop/portfolio-back/src/Core/Portfolio.Common/obj/Debug/net9.0/Portfolio.Common.pdb
 /Users/samirhebibov/Desktop/portfolio-back/src/Core/Portfolio.Common/obj/Debug/net9.0/ref/Portfolio.Common.dll
+/Users/samirhebibov/Desktop/portfolio-back/src/Core/Portfolio.Common/obj/Debug/net9.0/Portfolio.Common.sourcelink.json

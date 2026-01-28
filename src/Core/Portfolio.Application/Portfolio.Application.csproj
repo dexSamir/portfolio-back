@@ -5,6 +5,12 @@
     <ProjectReference Include="..\Portfolio.Common\Portfolio.Common.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Abstraction\Services\" />
+    <Folder Include="Dtos\" />
+    <Folder Include="Valitations\" />
+  </ItemGroup>
+
   <PropertyGroup>
     <TargetFramework>net9.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>

@@ -15,3 +15,4 @@
 /Users/samirhebibov/Desktop/portfolio-back/src/Core/Portfolio.Application/obj/Debug/net9.0/refint/Portfolio.Application.dll
 /Users/samirhebibov/Desktop/portfolio-back/src/Core/Portfolio.Application/obj/Debug/net9.0/Portfolio.Application.pdb
 /Users/samirhebibov/Desktop/portfolio-back/src/Core/Portfolio.Application/obj/Debug/net9.0/ref/Portfolio.Application.dll
+/Users/samirhebibov/Desktop/portfolio-back/src/Core/Portfolio.Application/obj/Debug/net9.0/Portfolio.Application.sourcelink.json

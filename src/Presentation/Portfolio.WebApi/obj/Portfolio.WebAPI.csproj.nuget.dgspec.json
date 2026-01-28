@@ -1,7 +1,7 @@
 {
   "format": 1,
   "restore": {
-    "/Users/samirhebibov/Desktop/portfolio-back/src/Presentation/Portfolio.WebAPI/Portfolio.WebAPI.csproj": {}
+    "/Users/samirhebibov/Desktop/portfolio-back/src/Presentation/Portfolio.WebApi/Portfolio.WebApi.csproj": {}
   },
   "projects": {
     "/Users/samirhebibov/Desktop/portfolio-back/src/Core/Portfolio.Application/Portfolio.Application.csproj": {
@@ -171,6 +171,12 @@
       "frameworks": {
         "net9.0": {
           "targetAlias": "net9.0",
+          "dependencies": {
+            "Microsoft.Extensions.Identity.Stores": {
+              "target": "Package",
+              "version": "[9.0.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -305,6 +311,30 @@
       "frameworks": {
         "net9.0": {
           "targetAlias": "net9.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[9.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[9.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[9.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.Relational": {
+              "target": "Package",
+              "version": "[9.0.0, )"
+            },
+            "Npgsql.EntityFrameworkCore.PostgreSQL": {
+              "target": "Package",
+              "version": "[9.0.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -325,14 +355,14 @@
         }
       }
     },
-    "/Users/samirhebibov/Desktop/portfolio-back/src/Presentation/Portfolio.WebAPI/Portfolio.WebAPI.csproj": {
+    "/Users/samirhebibov/Desktop/portfolio-back/src/Presentation/Portfolio.WebApi/Portfolio.WebApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/samirhebibov/Desktop/portfolio-back/src/Presentation/Portfolio.WebAPI/Portfolio.WebAPI.csproj",
+        "projectUniqueName": "/Users/samirhebibov/Desktop/portfolio-back/src/Presentation/Portfolio.WebApi/Portfolio.WebApi.csproj",
         "projectName": "Portfolio.WebAPI",
-        "projectPath": "/Users/samirhebibov/Desktop/portfolio-back/src/Presentation/Portfolio.WebAPI/Portfolio.WebAPI.csproj",
+        "projectPath": "/Users/samirhebibov/Desktop/portfolio-back/src/Presentation/Portfolio.WebApi/Portfolio.WebApi.csproj",
         "packagesPath": "/Users/samirhebibov/.nuget/packages/",
-        "outputPath": "/Users/samirhebibov/Desktop/portfolio-back/src/Presentation/Portfolio.WebAPI/obj/",
+        "outputPath": "/Users/samirhebibov/Desktop/portfolio-back/src/Presentation/Portfolio.WebApi/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/samirhebibov/.nuget/NuGet/NuGet.Config"
@@ -379,6 +409,10 @@
             "Microsoft.AspNetCore.OpenApi": {
               "target": "Package",
               "version": "[9.0.4, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[10.1.0, )"
             }
           },
           "imports": [
