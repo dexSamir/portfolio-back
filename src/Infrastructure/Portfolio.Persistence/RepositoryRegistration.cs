@@ -7,7 +7,6 @@ public static class RepositoryRegistration
 {
     public static IServiceCollection AddRepositories(IServiceCollection services)
     {
-        services.AddScoped<IGenericRepository, IGenericRepository>(); 
-
+        return services;
     }
 }

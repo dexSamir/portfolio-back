@@ -359,7 +359,7 @@
       "version": "1.0.0",
       "restore": {
         "projectUniqueName": "/Users/samirhebibov/Desktop/portfolio-back/src/Presentation/Portfolio.WebApi/Portfolio.WebApi.csproj",
-        "projectName": "Portfolio.WebAPI",
+        "projectName": "Portfolio.WebApi",
         "projectPath": "/Users/samirhebibov/Desktop/portfolio-back/src/Presentation/Portfolio.WebApi/Portfolio.WebApi.csproj",
         "packagesPath": "/Users/samirhebibov/.nuget/packages/",
         "outputPath": "/Users/samirhebibov/Desktop/portfolio-back/src/Presentation/Portfolio.WebApi/obj/",

@@ -1,7 +1,6 @@
 
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi;
-using Microsoft.OpenApi.Models;
 using Portfolio.Persistence.Contexts;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -12,11 +11,7 @@ builder.Services.AddEndpointsApiExplorer();
 
 builder.Services.AddSwaggerGen(c =>
 {
-    c.MapType<IFormFile>(() => new OpenApiSchema
-    {
-        Type = "string",
-        Format = "binary"
-    });
+    c.SwaggerDoc("v1", new OpenApiInfo { Title = "Portfolio Api", Version = "v1" }); 
 });
 
 builder.Services.AddDbContext<PortfolioDbContext>(opt =>
