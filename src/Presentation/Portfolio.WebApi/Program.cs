@@ -17,8 +17,6 @@ builder.Services.AddSwaggerGen(c =>
 builder.Services.AddDbContext<PortfolioDbContext>(opt =>
     opt.UseNpgsql(builder.Configuration.GetConnectionString("PostgreSQL"))); 
 
-
-
 var app = builder.Build();
 
 if (app.Environment.IsDevelopment())

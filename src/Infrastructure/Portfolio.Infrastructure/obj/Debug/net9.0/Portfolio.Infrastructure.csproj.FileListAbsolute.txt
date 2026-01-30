@@ -17,3 +17,4 @@
 /Users/samirhebibov/Desktop/portfolio-back/src/Infrastructure/Portfolio.Infrastructure/obj/Debug/net9.0/refint/Portfolio.Infrastructure.dll
 /Users/samirhebibov/Desktop/portfolio-back/src/Infrastructure/Portfolio.Infrastructure/obj/Debug/net9.0/Portfolio.Infrastructure.pdb
 /Users/samirhebibov/Desktop/portfolio-back/src/Infrastructure/Portfolio.Infrastructure/obj/Debug/net9.0/ref/Portfolio.Infrastructure.dll
+/Users/samirhebibov/Desktop/portfolio-back/src/Infrastructure/Portfolio.Infrastructure/obj/Debug/net9.0/Portfolio.Infrastructure.sourcelink.json

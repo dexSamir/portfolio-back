@@ -172,6 +172,10 @@
         "net9.0": {
           "targetAlias": "net9.0",
           "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[9.0.0, )"
+            },
             "Microsoft.Extensions.Identity.Stores": {
               "target": "Package",
               "version": "[9.0.0, )"
@@ -359,7 +363,7 @@
       "version": "1.0.0",
       "restore": {
         "projectUniqueName": "/Users/samirhebibov/Desktop/portfolio-back/src/Presentation/Portfolio.WebApi/Portfolio.WebApi.csproj",
-        "projectName": "Portfolio.WebApi",
+        "projectName": "Portfolio.WebAPI",
         "projectPath": "/Users/samirhebibov/Desktop/portfolio-back/src/Presentation/Portfolio.WebApi/Portfolio.WebApi.csproj",
         "packagesPath": "/Users/samirhebibov/.nuget/packages/",
         "outputPath": "/Users/samirhebibov/Desktop/portfolio-back/src/Presentation/Portfolio.WebApi/obj/",
@@ -409,6 +413,12 @@
             "Microsoft.AspNetCore.OpenApi": {
               "target": "Package",
               "version": "[9.0.4, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[9.0.3, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",

@@ -10,3 +10,4 @@
 /Users/samirhebibov/Desktop/portfolio-back/src/Core/Portfolio.Domain/obj/Debug/net9.0/Portfolio.Domain.pdb
 /Users/samirhebibov/Desktop/portfolio-back/src/Core/Portfolio.Domain/obj/Debug/net9.0/ref/Portfolio.Domain.dll
 /Users/samirhebibov/Desktop/portfolio-back/src/Core/Portfolio.Domain/obj/Debug/net9.0/Portfolio.Domain.sourcelink.json
+/Users/samirhebibov/Desktop/portfolio-back/src/Core/Portfolio.Domain/obj/Debug/net9.0/Portfolio.Domain.csproj.AssemblyReference.cache

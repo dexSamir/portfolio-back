@@ -10,5 +10,5 @@ public class Project : BaseEntity
     public string? LiveUrl { get; set; }
     public string? GithubUrl { get; set; }
 
-    public ICollection<Technology> Technologies { get; set; } = null!; 
+    public ICollection<Technology> Technologies { get; set; } = null!;
 }

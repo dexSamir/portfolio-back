@@ -1,11 +1,10 @@
 using Microsoft.AspNetCore.Identity;
 namespace Portfolio.Domain.Entities;
 
-
 public class User : IdentityUser<Guid>
 {
-    public string FirstName { get; set; } = null!;
-    public string? LastName { get; set; }
+    public string FullName { get; set; }
+    public string? ProfileImageUrl { get; set; }
 
     // Auth / Tokens
     public string? RefreshToken { get; set; }
