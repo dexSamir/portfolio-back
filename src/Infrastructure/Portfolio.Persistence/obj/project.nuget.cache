@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "BJ01zAc0K7o=",
+  "dgSpecHash": "1z9RkiDk0ys=",
   "success": true,
   "projectFilePath": "/Users/samirhebibov/Desktop/portfolio-back/src/Infrastructure/Portfolio.Persistence/Portfolio.Persistence.csproj",
   "expectedPackageFiles": [
     "/Users/samirhebibov/.nuget/packages/automapper/16.0.0/automapper.16.0.0.nupkg.sha512",
     "/Users/samirhebibov/.nuget/packages/automapper.extensions.microsoft.dependencyinjection/12.0.1/automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",
+    "/Users/samirhebibov/.nuget/packages/fluentvalidation/12.1.1/fluentvalidation.12.1.1.nupkg.sha512",
     "/Users/samirhebibov/.nuget/packages/humanizer.core/2.14.1/humanizer.core.2.14.1.nupkg.sha512",
     "/Users/samirhebibov/.nuget/packages/microsoft.aspnetcore.cryptography.internal/9.0.0/microsoft.aspnetcore.cryptography.internal.9.0.0.nupkg.sha512",
     "/Users/samirhebibov/.nuget/packages/microsoft.aspnetcore.cryptography.keyderivation/9.0.0/microsoft.aspnetcore.cryptography.keyderivation.9.0.0.nupkg.sha512",

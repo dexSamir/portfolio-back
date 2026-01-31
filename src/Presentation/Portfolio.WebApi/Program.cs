@@ -8,6 +8,8 @@ using Portfolio.Infrastructure;
 using Portfolio.Infrastructure.ServiceRegistrations;
 using Portfolio.Persistence;
 using Portfolio.Persistence.Contexts;
+using Portfolio.WebAPI.Extensions;
+using Portfolio.WebAPI.Middlewares;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -15,10 +17,7 @@ builder.Services.AddControllers();
 builder.Services.AddOpenApi();
 builder.Services.AddEndpointsApiExplorer();
 
-builder.Services.AddSwaggerGen(c =>
-{
-    c.SwaggerDoc("v1", new OpenApiInfo { Title = "Portfolio Api", Version = "v1" }); 
-});
+builder.Services.AddSwaggerGen(); 
 
 builder.Services.AddDbContext<PortfolioDbContext>(opt =>
     opt.UseNpgsql(builder.Configuration.GetConnectionString("PostgreSQL")));
@@ -36,9 +35,12 @@ builder.Services
 builder.Services.AddPersistentServices();
 builder.Services.AddApplication();
 builder.Services.AddCache(); 
+builder.Services.AddMapper();
 builder.Services.AddExternalServices();
 
 var app = builder.Build();
+
+app.UseGlobalExceptionHandling();
 
 if (app.Environment.IsDevelopment())
 {
@@ -47,7 +49,6 @@ if (app.Environment.IsDevelopment())
 }
 app.UseDeveloperExceptionPage();
 app.UseHttpsRedirection();
-// app.UseMiddleware<ExceptionMiddleware>();
 app.UseAuthorization();
 
 app.MapControllers();

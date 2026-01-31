@@ -59,6 +59,10 @@
             "AutoMapper.Extensions.Microsoft.DependencyInjection": {
               "target": "Package",
               "version": "[12.0.1, )"
+            },
+            "FluentValidation": {
+              "target": "Package",
+              "version": "[12.1.1, )"
             }
           },
           "imports": [
@@ -387,7 +391,7 @@
       "version": "1.0.0",
       "restore": {
         "projectUniqueName": "/Users/samirhebibov/Desktop/portfolio-back/src/Presentation/Portfolio.WebApi/Portfolio.WebApi.csproj",
-        "projectName": "Portfolio.WebAPI",
+        "projectName": "Portfolio.WebApi",
         "projectPath": "/Users/samirhebibov/Desktop/portfolio-back/src/Presentation/Portfolio.WebApi/Portfolio.WebApi.csproj",
         "packagesPath": "/Users/samirhebibov/.nuget/packages/",
         "outputPath": "/Users/samirhebibov/Desktop/portfolio-back/src/Presentation/Portfolio.WebApi/obj/",
@@ -434,6 +438,10 @@
         "net9.0": {
           "targetAlias": "net9.0",
           "dependencies": {
+            "FluentValidation.AspNetCore": {
+              "target": "Package",
+              "version": "[11.3.1, )"
+            },
             "Microsoft.AspNetCore.OpenApi": {
               "target": "Package",
               "version": "[9.0.4, )"
@@ -446,7 +454,7 @@
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
-              "version": "[10.1.0, )"
+              "version": "[6.6.2, )"
             }
           },
           "imports": [

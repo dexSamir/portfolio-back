@@ -4,13 +4,9 @@ using Portfolio.Domain.Entities;
 
 namespace Portfolio.Persistence.Contexts;
 
-public class PortfolioDbContext : IdentityDbContext<User, Role ,Guid>
+public class PortfolioDbContext(DbContextOptions<PortfolioDbContext> options)
+    : IdentityDbContext<User, Role, Guid>(options)
 {
-    public PortfolioDbContext(DbContextOptions<PortfolioDbContext> options) : base(options) 
-    {
-        
-    }
-    
     public DbSet<Technology> Technologies { get; set; }
     public DbSet<Project> Projects { get; set; }
      

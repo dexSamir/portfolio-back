@@ -240,9 +240,6 @@ namespace Portfolio.Persistence.Migrations
                         .HasMaxLength(100)
                         .HasColumnType("character varying(100)");
 
-                    b.Property<Guid>("ProjectId")
-                        .HasColumnType("uuid");
-
                     b.Property<DateTime>("UpdatedTime")
                         .HasColumnType("timestamp with time zone");
 
@@ -251,10 +248,6 @@ namespace Portfolio.Persistence.Migrations
                     b.HasIndex("IsDeleted");
 
                     b.HasIndex("Name");
-
-                    b.HasIndex("ProjectId");
-
-                    b.HasIndex("ProjectId", "IsDeleted");
 
                     b.ToTable("Technologies");
                 });
