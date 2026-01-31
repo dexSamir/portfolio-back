@@ -4,7 +4,7 @@ using Portfolio.Application.Abstraction.Repositories;
 using Portfolio.Domain.Entities.Base;
 using Portfolio.Persistence.Contexts;
 
-namespace Portfolio.Persistence.Implementations.Repositories;
+namespace Portfolio.Persistence.Repositories;
 
 public class GenericRepository<T>(PortfolioDbContext context) : IGenericRepository<T> where T: BaseEntity, new()
 {

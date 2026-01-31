@@ -6,9 +6,12 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Abstraction\Services\" />
-    <Folder Include="Dtos\" />
     <Folder Include="Valitations\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="16.0.0" />
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1" />
   </ItemGroup>
 
   <PropertyGroup>

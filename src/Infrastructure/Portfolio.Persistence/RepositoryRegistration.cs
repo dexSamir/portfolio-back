@@ -1,12 +1,15 @@
 using Microsoft.Extensions.DependencyInjection;
 using Portfolio.Application.Abstraction.Repositories;
+using Portfolio.Persistence.Repositories;
 
 namespace Portfolio.Persistence;
 
 public static class RepositoryRegistration
 {
-    public static IServiceCollection AddRepositories(IServiceCollection services)
+    public static IServiceCollection AddPersistentServices(this IServiceCollection services)
     {
+        
+        services.AddScoped<ITechnologyRepository, TechnologyRepository>();
         return services;
     }
 }

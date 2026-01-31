@@ -37,10 +37,9 @@ public class ProjectConfiguration
         builder.Property(x => x.IsDeleted)
             .HasDefaultValue(false);
 
-        builder.HasMany(x => x.Technologies)
-            .WithOne(t => t.Project)
-            .HasForeignKey(t => t.ProjectId)
-            .OnDelete(DeleteBehavior.Cascade);
+        builder.HasMany(x => x.ProjectTechnologies)
+            .WithOne(x => x.Project)
+            .HasForeignKey(x => x.ProjectId);
 
         builder.HasIndex(x => x.Title);
         builder.HasIndex(x => x.IsDeleted);

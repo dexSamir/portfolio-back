@@ -17,7 +17,7 @@ namespace Portfolio.Persistence.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "9.0.12")
+                .HasAnnotation("ProductVersion", "9.0.3")
                 .HasAnnotation("Relational:MaxIdentifierLength", 63);
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
@@ -175,6 +175,23 @@ namespace Portfolio.Persistence.Migrations
                     b.HasIndex("IsDeleted", "CreatedTime");
 
                     b.ToTable("Projects");
+                });
+
+            modelBuilder.Entity("Portfolio.Domain.Entities.ProjectTechnology", b =>
+                {
+                    b.Property<Guid>("ProjectId")
+                        .HasColumnType("uuid");
+
+                    b.Property<Guid>("TechnologyId")
+                        .HasColumnType("uuid");
+
+                    b.HasKey("ProjectId", "TechnologyId");
+
+                    b.HasIndex("ProjectId");
+
+                    b.HasIndex("TechnologyId");
+
+                    b.ToTable("ProjectTechnology");
                 });
 
             modelBuilder.Entity("Portfolio.Domain.Entities.Role", b =>
@@ -373,20 +390,33 @@ namespace Portfolio.Persistence.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("Portfolio.Domain.Entities.Technology", b =>
+            modelBuilder.Entity("Portfolio.Domain.Entities.ProjectTechnology", b =>
                 {
                     b.HasOne("Portfolio.Domain.Entities.Project", "Project")
-                        .WithMany("Technologies")
+                        .WithMany("ProjectTechnologies")
                         .HasForeignKey("ProjectId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("Portfolio.Domain.Entities.Technology", "Technology")
+                        .WithMany("ProjectTechnologies")
+                        .HasForeignKey("TechnologyId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.Navigation("Project");
+
+                    b.Navigation("Technology");
                 });
 
             modelBuilder.Entity("Portfolio.Domain.Entities.Project", b =>
                 {
-                    b.Navigation("Technologies");
+                    b.Navigation("ProjectTechnologies");
+                });
+
+            modelBuilder.Entity("Portfolio.Domain.Entities.Technology", b =>
+                {
+                    b.Navigation("ProjectTechnologies");
                 });
 #pragma warning restore 612, 618
         }

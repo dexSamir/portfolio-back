@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "yXg1aGekJuA=",
+  "dgSpecHash": "mzzldmmu7yo=",
   "success": true,
   "projectFilePath": "/Users/samirhebibov/Desktop/portfolio-back/src/Presentation/Portfolio.WebAPI/Portfolio.WebAPI.csproj",
   "expectedPackageFiles": [
+    "/Users/samirhebibov/.nuget/packages/automapper/16.0.0/automapper.16.0.0.nupkg.sha512",
+    "/Users/samirhebibov/.nuget/packages/automapper.extensions.microsoft.dependencyinjection/12.0.1/automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",
     "/Users/samirhebibov/.nuget/packages/humanizer.core/2.14.1/humanizer.core.2.14.1.nupkg.sha512",
     "/Users/samirhebibov/.nuget/packages/microsoft.aspnetcore.cryptography.internal/9.0.0/microsoft.aspnetcore.cryptography.internal.9.0.0.nupkg.sha512",
     "/Users/samirhebibov/.nuget/packages/microsoft.aspnetcore.cryptography.keyderivation/9.0.0/microsoft.aspnetcore.cryptography.keyderivation.9.0.0.nupkg.sha512",
@@ -24,22 +26,29 @@
     "/Users/samirhebibov/.nuget/packages/microsoft.entityframeworkcore.design/9.0.3/microsoft.entityframeworkcore.design.9.0.3.nupkg.sha512",
     "/Users/samirhebibov/.nuget/packages/microsoft.entityframeworkcore.relational/9.0.3/microsoft.entityframeworkcore.relational.9.0.3.nupkg.sha512",
     "/Users/samirhebibov/.nuget/packages/microsoft.extensions.apidescription.server/9.0.0/microsoft.extensions.apidescription.server.9.0.0.nupkg.sha512",
-    "/Users/samirhebibov/.nuget/packages/microsoft.extensions.caching.abstractions/9.0.3/microsoft.extensions.caching.abstractions.9.0.3.nupkg.sha512",
+    "/Users/samirhebibov/.nuget/packages/microsoft.extensions.caching.abstractions/10.0.2/microsoft.extensions.caching.abstractions.10.0.2.nupkg.sha512",
     "/Users/samirhebibov/.nuget/packages/microsoft.extensions.caching.memory/9.0.3/microsoft.extensions.caching.memory.9.0.3.nupkg.sha512",
+    "/Users/samirhebibov/.nuget/packages/microsoft.extensions.caching.stackexchangeredis/10.0.2/microsoft.extensions.caching.stackexchangeredis.10.0.2.nupkg.sha512",
     "/Users/samirhebibov/.nuget/packages/microsoft.extensions.configuration.abstractions/9.0.3/microsoft.extensions.configuration.abstractions.9.0.3.nupkg.sha512",
     "/Users/samirhebibov/.nuget/packages/microsoft.extensions.dependencyinjection/9.0.3/microsoft.extensions.dependencyinjection.9.0.3.nupkg.sha512",
-    "/Users/samirhebibov/.nuget/packages/microsoft.extensions.dependencyinjection.abstractions/9.0.3/microsoft.extensions.dependencyinjection.abstractions.9.0.3.nupkg.sha512",
+    "/Users/samirhebibov/.nuget/packages/microsoft.extensions.dependencyinjection.abstractions/10.0.2/microsoft.extensions.dependencyinjection.abstractions.10.0.2.nupkg.sha512",
     "/Users/samirhebibov/.nuget/packages/microsoft.extensions.dependencymodel/9.0.3/microsoft.extensions.dependencymodel.9.0.3.nupkg.sha512",
     "/Users/samirhebibov/.nuget/packages/microsoft.extensions.identity.core/9.0.0/microsoft.extensions.identity.core.9.0.0.nupkg.sha512",
     "/Users/samirhebibov/.nuget/packages/microsoft.extensions.identity.stores/9.0.0/microsoft.extensions.identity.stores.9.0.0.nupkg.sha512",
     "/Users/samirhebibov/.nuget/packages/microsoft.extensions.logging/9.0.3/microsoft.extensions.logging.9.0.3.nupkg.sha512",
-    "/Users/samirhebibov/.nuget/packages/microsoft.extensions.logging.abstractions/9.0.3/microsoft.extensions.logging.abstractions.9.0.3.nupkg.sha512",
-    "/Users/samirhebibov/.nuget/packages/microsoft.extensions.options/9.0.3/microsoft.extensions.options.9.0.3.nupkg.sha512",
-    "/Users/samirhebibov/.nuget/packages/microsoft.extensions.primitives/9.0.3/microsoft.extensions.primitives.9.0.3.nupkg.sha512",
+    "/Users/samirhebibov/.nuget/packages/microsoft.extensions.logging.abstractions/10.0.2/microsoft.extensions.logging.abstractions.10.0.2.nupkg.sha512",
+    "/Users/samirhebibov/.nuget/packages/microsoft.extensions.options/10.0.2/microsoft.extensions.options.10.0.2.nupkg.sha512",
+    "/Users/samirhebibov/.nuget/packages/microsoft.extensions.primitives/10.0.2/microsoft.extensions.primitives.10.0.2.nupkg.sha512",
+    "/Users/samirhebibov/.nuget/packages/microsoft.identitymodel.abstractions/8.14.0/microsoft.identitymodel.abstractions.8.14.0.nupkg.sha512",
+    "/Users/samirhebibov/.nuget/packages/microsoft.identitymodel.jsonwebtokens/8.14.0/microsoft.identitymodel.jsonwebtokens.8.14.0.nupkg.sha512",
+    "/Users/samirhebibov/.nuget/packages/microsoft.identitymodel.logging/8.14.0/microsoft.identitymodel.logging.8.14.0.nupkg.sha512",
+    "/Users/samirhebibov/.nuget/packages/microsoft.identitymodel.tokens/8.14.0/microsoft.identitymodel.tokens.8.14.0.nupkg.sha512",
     "/Users/samirhebibov/.nuget/packages/microsoft.openapi/2.3.0/microsoft.openapi.2.3.0.nupkg.sha512",
     "/Users/samirhebibov/.nuget/packages/mono.texttemplating/3.0.0/mono.texttemplating.3.0.0.nupkg.sha512",
     "/Users/samirhebibov/.nuget/packages/npgsql/9.0.0/npgsql.9.0.0.nupkg.sha512",
     "/Users/samirhebibov/.nuget/packages/npgsql.entityframeworkcore.postgresql/9.0.0/npgsql.entityframeworkcore.postgresql.9.0.0.nupkg.sha512",
+    "/Users/samirhebibov/.nuget/packages/pipelines.sockets.unofficial/2.2.8/pipelines.sockets.unofficial.2.2.8.nupkg.sha512",
+    "/Users/samirhebibov/.nuget/packages/stackexchange.redis/2.7.27/stackexchange.redis.2.7.27.nupkg.sha512",
     "/Users/samirhebibov/.nuget/packages/swashbuckle.aspnetcore/10.1.0/swashbuckle.aspnetcore.10.1.0.nupkg.sha512",
     "/Users/samirhebibov/.nuget/packages/swashbuckle.aspnetcore.swagger/10.1.0/swashbuckle.aspnetcore.swagger.10.1.0.nupkg.sha512",
     "/Users/samirhebibov/.nuget/packages/swashbuckle.aspnetcore.swaggergen/10.1.0/swashbuckle.aspnetcore.swaggergen.10.1.0.nupkg.sha512",
@@ -52,11 +61,26 @@
     "/Users/samirhebibov/.nuget/packages/system.composition.hosting/7.0.0/system.composition.hosting.7.0.0.nupkg.sha512",
     "/Users/samirhebibov/.nuget/packages/system.composition.runtime/7.0.0/system.composition.runtime.7.0.0.nupkg.sha512",
     "/Users/samirhebibov/.nuget/packages/system.composition.typedparts/7.0.0/system.composition.typedparts.7.0.0.nupkg.sha512",
-    "/Users/samirhebibov/.nuget/packages/system.io.pipelines/7.0.0/system.io.pipelines.7.0.0.nupkg.sha512",
+    "/Users/samirhebibov/.nuget/packages/system.diagnostics.diagnosticsource/10.0.2/system.diagnostics.diagnosticsource.10.0.2.nupkg.sha512",
+    "/Users/samirhebibov/.nuget/packages/system.io.pipelines/10.0.2/system.io.pipelines.10.0.2.nupkg.sha512",
     "/Users/samirhebibov/.nuget/packages/system.reflection.metadata/7.0.0/system.reflection.metadata.7.0.0.nupkg.sha512",
     "/Users/samirhebibov/.nuget/packages/system.runtime.compilerservices.unsafe/6.0.0/system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
-    "/Users/samirhebibov/.nuget/packages/system.text.json/9.0.3/system.text.json.9.0.3.nupkg.sha512",
+    "/Users/samirhebibov/.nuget/packages/system.text.encodings.web/10.0.2/system.text.encodings.web.10.0.2.nupkg.sha512",
+    "/Users/samirhebibov/.nuget/packages/system.text.json/10.0.2/system.text.json.10.0.2.nupkg.sha512",
     "/Users/samirhebibov/.nuget/packages/system.threading.channels/7.0.0/system.threading.channels.7.0.0.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1608",
+      "level": "Warning",
+      "message": "Detected package version outside of dependency constraint: AutoMapper.Extensions.Microsoft.DependencyInjection 12.0.1 requires AutoMapper (= 12.0.1) but version AutoMapper 16.0.0 was resolved.",
+      "projectPath": "/Users/samirhebibov/Desktop/portfolio-back/src/Presentation/Portfolio.WebApi/Portfolio.WebApi.csproj",
+      "warningLevel": 1,
+      "filePath": "/Users/samirhebibov/Desktop/portfolio-back/src/Presentation/Portfolio.WebApi/Portfolio.WebApi.csproj",
+      "libraryId": "AutoMapper",
+      "targetGraphs": [
+        "net9.0"
+      ]
+    }
+  ]
 }

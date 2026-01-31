@@ -1,6 +1,12 @@
 
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi;
+using Portfolio.Application;
+using Portfolio.Domain.Entities;
+using Portfolio.Infrastructure;
+using Portfolio.Infrastructure.ServiceRegistrations;
+using Portfolio.Persistence;
 using Portfolio.Persistence.Contexts;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -15,7 +21,22 @@ builder.Services.AddSwaggerGen(c =>
 });
 
 builder.Services.AddDbContext<PortfolioDbContext>(opt =>
-    opt.UseNpgsql(builder.Configuration.GetConnectionString("PostgreSQL"))); 
+    opt.UseNpgsql(builder.Configuration.GetConnectionString("PostgreSQL")));
+
+builder.Services
+    .AddIdentity<User, Role>(options =>
+    {
+        options.Password.RequiredLength = 6;
+        options.User.RequireUniqueEmail = true;
+    })
+    .AddEntityFrameworkStores<PortfolioDbContext>()
+    .AddDefaultTokenProviders();
+
+
+builder.Services.AddPersistentServices();
+builder.Services.AddApplication();
+builder.Services.AddCache(); 
+builder.Services.AddExternalServices();
 
 var app = builder.Build();
 

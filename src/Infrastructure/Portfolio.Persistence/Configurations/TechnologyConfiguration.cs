@@ -21,15 +21,12 @@ public class TechnologyConfiguration : IEntityTypeConfiguration<Technology>
         builder.Property(x => x.IsDeleted)
             .HasDefaultValue(false);
 
-        builder.HasOne(x => x.Project)
-            .WithMany(p => p.Technologies)
-            .HasForeignKey(x => x.ProjectId)
-            .OnDelete(DeleteBehavior.Cascade);
+        builder.HasMany(x => x.ProjectTechnologies)
+            .WithOne(x => x.Technology)
+            .HasForeignKey(x => x.TechnologyId);
 
-        builder.HasIndex(x => x.ProjectId);
         builder.HasIndex(x => x.IsDeleted);
         builder.HasIndex(x => x.Name);
-        builder.HasIndex(x => new { x.ProjectId, x.IsDeleted });
         builder.HasQueryFilter(x => !x.IsDeleted);
     }
 }
