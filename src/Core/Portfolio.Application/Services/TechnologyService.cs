@@ -25,7 +25,7 @@ public class TechnologyService(ITechnologyRepository repo, IMapper mapper, ICach
     
     public async Task<TechnologyGetDto> GetByIdAsync(Guid id)
     {
-        var data = await repo.GetByIdAsync(id, true, "ProjectTechnology") ?? 
+        var data = await repo.GetByIdAsync(id) ?? 
                    throw new NotFoundException<Technology>();
         return mapper.Map<TechnologyGetDto>(data); 
     }

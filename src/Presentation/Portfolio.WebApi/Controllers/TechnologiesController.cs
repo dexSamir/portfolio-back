@@ -3,7 +3,7 @@ using Portfolio.Application.Abstraction.Services;
 using Portfolio.Application.Dtos.Technology;
 using Portfolio.Domain.Enums;
 
-namespace Portfolio.WebAPI;
+namespace Portfolio.WebAPI.Controllers;
 
 [Route("api/[controller]/[action]")]
 [ApiController]

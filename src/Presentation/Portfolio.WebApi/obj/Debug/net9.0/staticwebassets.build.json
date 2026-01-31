@@ -1,8 +1,8 @@
 {
   "Version": 1,
-  "Hash": "5doUAfICUDPH0UaqE1AmNQC0wJHTMN7fDSaRQlkiqxg=",
-  "Source": "Portfolio.WebApi",
-  "BasePath": "_content/Portfolio.WebApi",
+  "Hash": "8IyVqRMaKWpILxDPjkT1Vg56+kM+4CmqQ4w/OP0p3sI=",
+  "Source": "Portfolio.WebAPI",
+  "BasePath": "_content/Portfolio.WebAPI",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],

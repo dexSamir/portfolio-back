@@ -14,7 +14,6 @@ using Portfolio.WebAPI.Middlewares;
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers(); 
-builder.Services.AddOpenApi();
 builder.Services.AddEndpointsApiExplorer();
 
 builder.Services.AddSwaggerGen(); 
@@ -45,7 +44,12 @@ app.UseGlobalExceptionHandling();
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
-    app.UseSwaggerUI();
+    app.UseSwaggerUI(c =>
+    {
+        c.DocumentTitle = "Portfolio API";
+        c.SwaggerEndpoint("/swagger/v1/swagger.json", "Portfolio API v1");
+        c.RoutePrefix = "swagger";
+    });
 }
 app.UseDeveloperExceptionPage();
 app.UseHttpsRedirection();
