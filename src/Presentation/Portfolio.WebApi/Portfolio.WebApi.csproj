@@ -22,4 +22,8 @@
     <ProjectReference Include="..\..\Infrastructure\Portfolio.Persistence\Portfolio.Persistence.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="wwwroot\" />
+  </ItemGroup>
+
 </Project>
