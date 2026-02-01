@@ -8,7 +8,7 @@ public static class RepositoryRegistration
 {
     public static IServiceCollection AddPersistentServices(this IServiceCollection services)
     {
-        
+        services.AddScoped<IProjectRepository, ProjectRepository>(); 
         services.AddScoped<ITechnologyRepository, TechnologyRepository>();
         return services;
     }
