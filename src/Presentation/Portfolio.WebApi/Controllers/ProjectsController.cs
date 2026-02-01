@@ -18,7 +18,7 @@ public class ProjectsController(IProjectService service) : ControllerBase
         => Ok(await service.GetByIdAsync(id));
 
     [HttpPost]
-    public async Task<IActionResult> Create([FromBody] ProjectCreateDto dto)
+    public async Task<IActionResult> Create([FromForm] ProjectCreateDto dto)
         => Ok(await service.CreateAsync(dto));
 
     [HttpPost]

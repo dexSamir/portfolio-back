@@ -8,7 +8,7 @@ public class ProjectGetDto
     public Guid Id { get;set; }
     public string Title { get;set; } = null!;
     public string Description { get;set; } = null!;
-    public IFormFile ImageUrl { get; set; }
+    public string? ImageUrl { get; set; }
     public string? LiveUrl { get; set; }
     public string? GithubUrl { get; set; }
     public DateTime CreatedTime { get;set; }

@@ -156,4 +156,5 @@
 /Users/samirhebibov/Desktop/portfolio-back/src/Presentation/Portfolio.WebApi/bin/Debug/net9.0/System.Text.Json.dll
 /Users/samirhebibov/Desktop/portfolio-back/src/Presentation/Portfolio.WebApi/bin/Debug/net9.0/runtimes/browser/lib/net8.0/System.Text.Encodings.Web.dll
 /Users/samirhebibov/Desktop/portfolio-back/src/Presentation/Portfolio.WebApi/bin/Debug/net9.0/runtimes/win/lib/net9.0/System.Text.Encodings.Web.dll
+/Users/samirhebibov/Desktop/portfolio-back/src/Presentation/Portfolio.WebApi/bin/Debug/net9.0/Portfolio.WebAPI.staticwebassets.runtime.json
 /Users/samirhebibov/Desktop/portfolio-back/src/Presentation/Portfolio.WebAPI/obj/Debug/net9.0/Portfoli.43716825.Up2Date

@@ -17,6 +17,7 @@ public class ProjectProfile : Profile
         CreateMap<Technology, TechnologyNestedGetDto>();
 
         CreateMap<ProjectCreateDto, Project>()
+            .ForMember(dest => dest.ImageUrl, opt => opt.MapFrom(src => src.ImageUrl))
             .ForMember(
                 dest => dest.ProjectTechnologies,
                 opt => opt.MapFrom(src =>
@@ -31,7 +32,7 @@ public class ProjectProfile : Profile
             .ForMember(dest => dest.IsDeleted, opt => opt.Ignore());
 
         CreateMap<ProjectUpdateDto, Project>()
-
+            .ForMember(dest => dest.ImageUrl, opt => opt.MapFrom(src => src.ImageUrl))
             .ForMember(dest => dest.ProjectTechnologies, opt => opt.Ignore())
             .ForMember(dest => dest.UpdatedTime, opt => opt.MapFrom(_ => DateTime.UtcNow))
             .ForAllMembers(opt =>

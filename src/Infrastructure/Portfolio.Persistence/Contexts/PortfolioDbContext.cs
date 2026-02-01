@@ -8,6 +8,7 @@ public class PortfolioDbContext(DbContextOptions<PortfolioDbContext> options)
     : IdentityDbContext<User, Role, Guid>(options)
 {
     public DbSet<Technology> Technologies { get; set; }
+    public DbSet<ProjectTechnology>  ProjectTechnologies { get; set; }
     public DbSet<Project> Projects { get; set; }
      
     protected override void OnModelCreating(ModelBuilder builder)

@@ -191,7 +191,7 @@ namespace Portfolio.Persistence.Migrations
 
                     b.HasIndex("TechnologyId");
 
-                    b.ToTable("ProjectTechnology");
+                    b.ToTable("ProjectTechnologies");
                 });
 
             modelBuilder.Entity("Portfolio.Domain.Entities.Role", b =>

@@ -8,7 +8,8 @@ public static class ExternalServiceRegistration
 {
     public static IServiceCollection AddExternalServices(this IServiceCollection services)
     {
-        services.AddScoped<ICacheService, CacheService>(); 
+        services.AddScoped<ICacheService, CacheService>();
+        services.AddScoped<IFileService, FileService>(); 
         return services;
     }
     

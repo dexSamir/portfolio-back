@@ -16,10 +16,19 @@ public class ProjectService(IProjectRepository repo, IMapper mapper, ICacheServi
     {
         var projects = await cache.GetOrSetAsync(
             CacheKeys.Project,
-            () =>  repo.GetAllAsync(),
-            TimeSpan.FromMinutes(5)); 
+            () => repo.GetAllAsync(
+                asNoTrack: true,
+                predicate: null,
+                orderBy: null,
+                "ProjectTechnologies",
+                "ProjectTechnologies.Technology"
+            ),
+            TimeSpan.FromMinutes(5)
+        );
+
         return mapper.Map<IEnumerable<ProjectGetDto>>(projects);
     }
+
 
     public async Task<ProjectGetDto> GetByIdAsync(Guid id)
     {
@@ -34,6 +43,7 @@ public class ProjectService(IProjectRepository repo, IMapper mapper, ICacheServi
     public async Task<ProjectGetDto> CreateAsync(ProjectCreateDto dto)
     {
         var data = mapper.Map<Project>(dto);
+        await repo.GetByIdAsync(data.Id, true, "ProjectTechnologies", "ProjectTechnologies.Technology");
         data.CreatedTime = DateTime.UtcNow;
 
         if (dto?.ImageUrl != null)
@@ -41,7 +51,6 @@ public class ProjectService(IProjectRepository repo, IMapper mapper, ICacheServi
                 
         await repo.AddAsync(data);
         await repo.SaveAsync();
-        await repo.GetByIdAsync(data.Id, true, "ProjectTechnologies", "ProjectTechnologies.Technology");
         return mapper.Map<ProjectGetDto>(data); 
     }
 
@@ -54,7 +63,10 @@ public class ProjectService(IProjectRepository repo, IMapper mapper, ICacheServi
         {
             data[i].CreatedTime = DateTime.UtcNow;
             if (dtos.ElementAt(i).ImageUrl != null)
+            {
+                await repo.GetByIdAsync(data[i].Id, true, "ProjectTechnologies", "ProjectTechnologies.Technology");
                 data[i].ImageUrl = await fileService.ProcessImageAsync(dtos.ElementAt(i).ImageUrl, "projects", "image/", 15);
+            }
         }
 
         await repo.AddRangeAsync(data);
@@ -151,7 +163,10 @@ public class ProjectService(IProjectRepository repo, IMapper mapper, ICacheServi
                     $"Delete type '{dType}' is not supported.");
         }
 
-        var success = await repo.SaveAsync() > 0;
+        var success = await repo.SaveAsync() == ids.Length ? true : false;
+        
+        if(success)
+            await cache.RemoveAsync(CacheKeys.Project);
         return success;
     }
 
