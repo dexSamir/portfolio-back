@@ -1,27 +1,27 @@
 {
   "Version": 1,
-  "Hash": "iah0iYU4ughAKzTD00na5QzDMdxzpPKW4lQqLT27umQ=",
-  "Source": "Portfolio.WebAPI",
-  "BasePath": "_content/Portfolio.WebAPI",
+  "Hash": "JikvbES7khnhOGEwGzryDkNGOC9g7+gX2eqemNfgE/U=",
+  "Source": "Portfolio.WebApi",
+  "BasePath": "_content/Portfolio.WebApi",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
   "DiscoveryPatterns": [
     {
-      "Name": "Portfolio.WebAPI/wwwroot",
-      "Source": "Portfolio.WebAPI",
-      "ContentRoot": "/Users/samirhebibov/Desktop/portfolio-back/src/Presentation/Portfolio.WebAPI/wwwroot/",
-      "BasePath": "_content/Portfolio.WebAPI",
+      "Name": "Portfolio.WebApi/wwwroot",
+      "Source": "Portfolio.WebApi",
+      "ContentRoot": "/Users/samirhebibov/Desktop/portfolio-back/src/Presentation/Portfolio.WebApi/wwwroot/",
+      "BasePath": "_content/Portfolio.WebApi",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
       "Identity": "/Users/samirhebibov/Desktop/portfolio-back/src/Presentation/Portfolio.WebApi/wwwroot/projects/baydyhet.gfk.jpeg",
-      "SourceId": "Portfolio.WebAPI",
+      "SourceId": "Portfolio.WebApi",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/samirhebibov/Desktop/portfolio-back/src/Presentation/Portfolio.WebAPI/wwwroot/",
-      "BasePath": "_content/Portfolio.WebAPI",
+      "ContentRoot": "/Users/samirhebibov/Desktop/portfolio-back/src/Presentation/Portfolio.WebApi/wwwroot/",
+      "BasePath": "_content/Portfolio.WebApi",
       "RelativePath": "projects/baydyhet.gfk#[.{fingerprint}]?.jpeg",
       "AssetKind": "All",
       "AssetMode": "All",
@@ -39,10 +39,10 @@
     },
     {
       "Identity": "/Users/samirhebibov/Desktop/portfolio-back/src/Presentation/Portfolio.WebApi/wwwroot/projects/woo4440n.4pv.jpg",
-      "SourceId": "Portfolio.WebAPI",
+      "SourceId": "Portfolio.WebApi",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/samirhebibov/Desktop/portfolio-back/src/Presentation/Portfolio.WebAPI/wwwroot/",
-      "BasePath": "_content/Portfolio.WebAPI",
+      "ContentRoot": "/Users/samirhebibov/Desktop/portfolio-back/src/Presentation/Portfolio.WebApi/wwwroot/",
+      "BasePath": "_content/Portfolio.WebApi",
       "RelativePath": "projects/woo4440n.4pv#[.{fingerprint}]?.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
