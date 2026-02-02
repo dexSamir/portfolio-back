@@ -10,6 +10,7 @@ public static class RepositoryRegistration
     {
         services.AddScoped<IProjectRepository, ProjectRepository>(); 
         services.AddScoped<ITechnologyRepository, TechnologyRepository>();
+        services.AddScoped<ITestimonialRepository, TestimonialRepository>(); 
         return services;
     }
 }

@@ -10,6 +10,7 @@ public static class ServiceRegistration
     {
         services.AddScoped<ITechnologyService, TechnologyService>();
         services.AddScoped<IProjectService, ProjectService>();
+        services.AddScoped<IAuthService, AuthService>(); 
         return services;
     }
 }

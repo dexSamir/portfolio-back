@@ -1,40 +1,32 @@
 {
   "Files": [
     {
-      "Id": "/Users/samirhebibov/Desktop/portfolio-back/src/Presentation/Portfolio.WebApi/wwwroot/imgs/projects/2p0f1rxm.ues.jpeg",
-      "PackagePath": "staticwebassets/imgs/projects/2p0f1rxm.ues.jpeg"
+      "Id": "/Users/samirhebibov/Desktop/portfolio-back/src/Presentation/Portfolio.WebApi/wwwroot/projects/baydyhet.gfk.jpeg",
+      "PackagePath": "staticwebassets/projects/baydyhet.gfk.jpeg"
     },
     {
-      "Id": "/Users/samirhebibov/Desktop/portfolio-back/src/Presentation/Portfolio.WebApi/wwwroot/imgs/projects/5hwwfzs4.auu.jpeg",
-      "PackagePath": "staticwebassets/imgs/projects/5hwwfzs4.auu.jpeg"
+      "Id": "/Users/samirhebibov/Desktop/portfolio-back/src/Presentation/Portfolio.WebApi/wwwroot/projects/woo4440n.4pv.jpg",
+      "PackagePath": "staticwebassets/projects/woo4440n.4pv.jpg"
     },
     {
-      "Id": "/Users/samirhebibov/Desktop/portfolio-back/src/Presentation/Portfolio.WebApi/wwwroot/imgs/projects/fha2gdmj.td3.jpg",
-      "PackagePath": "staticwebassets/imgs/projects/fha2gdmj.td3.jpg"
-    },
-    {
-      "Id": "/Users/samirhebibov/Desktop/portfolio-back/src/Presentation/Portfolio.WebApi/wwwroot/imgs/projects/q2m4w5ih.f5m.jpeg",
-      "PackagePath": "staticwebassets/imgs/projects/q2m4w5ih.f5m.jpeg"
-    },
-    {
-      "Id": "obj/Debug/net9.0/staticwebassets/msbuild.Portfolio.WebAPI.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+      "Id": "obj/Debug/net9.0/staticwebassets/msbuild.Portfolio.WebApi.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
       "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
     },
     {
-      "Id": "obj/Debug/net9.0/staticwebassets/msbuild.Portfolio.WebAPI.Microsoft.AspNetCore.StaticWebAssets.props",
+      "Id": "obj/Debug/net9.0/staticwebassets/msbuild.Portfolio.WebApi.Microsoft.AspNetCore.StaticWebAssets.props",
       "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
     },
     {
-      "Id": "obj/Debug/net9.0/staticwebassets/msbuild.build.Portfolio.WebAPI.props",
-      "PackagePath": "build\\Portfolio.WebAPI.props"
+      "Id": "obj/Debug/net9.0/staticwebassets/msbuild.build.Portfolio.WebApi.props",
+      "PackagePath": "build\\Portfolio.WebApi.props"
     },
     {
-      "Id": "obj/Debug/net9.0/staticwebassets/msbuild.buildMultiTargeting.Portfolio.WebAPI.props",
-      "PackagePath": "buildMultiTargeting\\Portfolio.WebAPI.props"
+      "Id": "obj/Debug/net9.0/staticwebassets/msbuild.buildMultiTargeting.Portfolio.WebApi.props",
+      "PackagePath": "buildMultiTargeting\\Portfolio.WebApi.props"
     },
     {
-      "Id": "obj/Debug/net9.0/staticwebassets/msbuild.buildTransitive.Portfolio.WebAPI.props",
-      "PackagePath": "buildTransitive\\Portfolio.WebAPI.props"
+      "Id": "obj/Debug/net9.0/staticwebassets/msbuild.buildTransitive.Portfolio.WebApi.props",
+      "PackagePath": "buildTransitive\\Portfolio.WebApi.props"
     }
   ],
   "ElementsToRemove": []

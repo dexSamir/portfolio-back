@@ -29,4 +29,6 @@ public static class ExternalServiceRegistration
         services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
         return services;
     }
+    
+    
 }

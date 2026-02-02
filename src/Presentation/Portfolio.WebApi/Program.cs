@@ -22,13 +22,19 @@ builder.Services.AddDbContext<PortfolioDbContext>(opt =>
     opt.UseNpgsql(builder.Configuration.GetConnectionString("PostgreSQL")));
 
 builder.Services
-    .AddIdentity<User, Role>(options =>
+    .AddIdentity<User, IdentityRole<Guid>>(options =>
     {
-        options.Password.RequiredLength = 6;
         options.User.RequireUniqueEmail = true;
+
+        options.Password.RequiredLength = 6;
+        options.Password.RequireDigit = false;
+        options.Password.RequireUppercase = false;
+        options.Password.RequireLowercase = false;
+        options.Password.RequireNonAlphanumeric = false;
     })
     .AddEntityFrameworkStores<PortfolioDbContext>()
     .AddDefaultTokenProviders();
+
 
 
 builder.Services.AddPersistentServices();
@@ -38,6 +44,11 @@ builder.Services.AddMapper();
 builder.Services.AddExternalServices();
 
 var app = builder.Build();
+
+using (var scope = app.Services.CreateScope())
+{
+    await AdminSeed.SeedAsync(scope.ServiceProvider);
+}
 
 app.UseGlobalExceptionHandling();
 

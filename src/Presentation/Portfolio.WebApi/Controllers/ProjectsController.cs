@@ -29,9 +29,11 @@ public class ProjectsController(IProjectService service) : ControllerBase
     public async Task<IActionResult> Update(Guid id, [FromBody] ProjectUpdateDto dto)
         => Ok(await service.UpdateAsync(id, dto));
 
-    [HttpDelete]
-    public async Task<IActionResult> Delete([FromQuery] Guid[] ids, [FromQuery] EDeleteType dType)
-        => Ok(await service.DeleteAsync(ids, dType));
+    [HttpDelete("{dType}")]
+    public async Task<IActionResult> Delete([FromQuery] Guid[] ids, EDeleteType dType)
+    {
+        return Ok(await service.DeleteAsync(ids, dType));
+    }
 
     [HttpPost]
     public async Task<IActionResult> Restore([FromQuery] Guid[] ids)

@@ -19,9 +19,7 @@ public class ProjectService(IProjectRepository repo, IMapper mapper, ICacheServi
             () => repo.GetAllAsync(
                 asNoTrack: true,
                 predicate: null,
-                orderBy: null,
-                "ProjectTechnologies",
-                "ProjectTechnologies.Technology"
+                orderBy: null
             ),
             TimeSpan.FromMinutes(5)
         );
@@ -163,7 +161,7 @@ public class ProjectService(IProjectRepository repo, IMapper mapper, ICacheServi
                     $"Delete type '{dType}' is not supported.");
         }
 
-        var success = await repo.SaveAsync() == ids.Length ? true : false;
+        var success = await repo.SaveAsync() > 0; 
         
         if(success)
             await cache.RemoveAsync(CacheKeys.Project);

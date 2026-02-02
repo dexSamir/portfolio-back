@@ -6,7 +6,7 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v9.0": {
-      "Portfolio.WebAPI/1.0.0": {
+      "Portfolio.WebApi/1.0.0": {
         "dependencies": {
           "FluentValidation.AspNetCore": "11.3.1",
           "Microsoft.AspNetCore.OpenApi": "9.0.4",
@@ -17,7 +17,7 @@
           "Swashbuckle.AspNetCore": "6.6.2"
         },
         "runtime": {
-          "Portfolio.WebAPI.dll": {}
+          "Portfolio.WebApi.dll": {}
         }
       },
       "AutoMapper/12.0.1": {
@@ -945,7 +945,7 @@
     }
   },
   "libraries": {
-    "Portfolio.WebAPI/1.0.0": {
+    "Portfolio.WebApi/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
