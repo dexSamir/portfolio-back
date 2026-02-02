@@ -12,18 +12,45 @@ using Portfolio.Persistence.Contexts;
 namespace Portfolio.Persistence.Migrations
 {
     [DbContext(typeof(PortfolioDbContext))]
-    [Migration("20260130170010_entities")]
-    partial class entities
+    [Migration("20260202200027_onrender")]
+    partial class onrender
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "9.0.12")
+                .HasAnnotation("ProductVersion", "9.0.3")
                 .HasAnnotation("Relational:MaxIdentifierLength", 63);
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole<System.Guid>", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<string>("ConcurrencyStamp")
+                        .IsConcurrencyToken()
+                        .HasColumnType("text");
+
+                    b.Property<string>("Name")
+                        .HasMaxLength(256)
+                        .HasColumnType("character varying(256)");
+
+                    b.Property<string>("NormalizedName")
+                        .HasMaxLength(256)
+                        .HasColumnType("character varying(256)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("NormalizedName")
+                        .IsUnique()
+                        .HasDatabaseName("RoleNameIndex");
+
+                    b.ToTable("AspNetRoles", (string)null);
+                });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<System.Guid>", b =>
                 {
@@ -180,31 +207,21 @@ namespace Portfolio.Persistence.Migrations
                     b.ToTable("Projects");
                 });
 
-            modelBuilder.Entity("Portfolio.Domain.Entities.Role", b =>
+            modelBuilder.Entity("Portfolio.Domain.Entities.ProjectTechnology", b =>
                 {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
+                    b.Property<Guid>("ProjectId")
                         .HasColumnType("uuid");
 
-                    b.Property<string>("ConcurrencyStamp")
-                        .IsConcurrencyToken()
-                        .HasColumnType("text");
+                    b.Property<Guid>("TechnologyId")
+                        .HasColumnType("uuid");
 
-                    b.Property<string>("Name")
-                        .HasMaxLength(256)
-                        .HasColumnType("character varying(256)");
+                    b.HasKey("ProjectId", "TechnologyId");
 
-                    b.Property<string>("NormalizedName")
-                        .HasMaxLength(256)
-                        .HasColumnType("character varying(256)");
+                    b.HasIndex("ProjectId");
 
-                    b.HasKey("Id");
+                    b.HasIndex("TechnologyId");
 
-                    b.HasIndex("NormalizedName")
-                        .IsUnique()
-                        .HasDatabaseName("RoleNameIndex");
-
-                    b.ToTable("AspNetRoles", (string)null);
+                    b.ToTable("ProjectTechnologies");
                 });
 
             modelBuilder.Entity("Portfolio.Domain.Entities.Technology", b =>
@@ -226,9 +243,6 @@ namespace Portfolio.Persistence.Migrations
                         .HasMaxLength(100)
                         .HasColumnType("character varying(100)");
 
-                    b.Property<Guid>("ProjectId")
-                        .HasColumnType("uuid");
-
                     b.Property<DateTime>("UpdatedTime")
                         .HasColumnType("timestamp with time zone");
 
@@ -238,11 +252,62 @@ namespace Portfolio.Persistence.Migrations
 
                     b.HasIndex("Name");
 
-                    b.HasIndex("ProjectId");
-
-                    b.HasIndex("ProjectId", "IsDeleted");
-
                     b.ToTable("Technologies");
+                });
+
+            modelBuilder.Entity("Portfolio.Domain.Entities.Testimonial", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<string>("Company")
+                        .HasMaxLength(100)
+                        .HasColumnType("character varying(100)");
+
+                    b.Property<DateTime>("CreatedTime")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("FullName")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("character varying(100)");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("boolean");
+
+                    b.Property<string>("Message")
+                        .IsRequired()
+                        .HasMaxLength(1000)
+                        .HasColumnType("character varying(1000)");
+
+                    b.Property<string>("Position")
+                        .HasMaxLength(100)
+                        .HasColumnType("character varying(100)");
+
+                    b.Property<string>("ProfileImageUrl")
+                        .HasColumnType("text");
+
+                    b.Property<int>("Rating")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("Status")
+                        .HasColumnType("integer");
+
+                    b.Property<DateTime>("UpdatedTime")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CreatedTime");
+
+                    b.HasIndex("Rating");
+
+                    b.HasIndex("Status");
+
+                    b.HasIndex("Status", "CreatedTime");
+
+                    b.ToTable("Testimonials");
                 });
 
             modelBuilder.Entity("Portfolio.Domain.Entities.User", b =>
@@ -327,7 +392,7 @@ namespace Portfolio.Persistence.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<System.Guid>", b =>
                 {
-                    b.HasOne("Portfolio.Domain.Entities.Role", null)
+                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole<System.Guid>", null)
                         .WithMany()
                         .HasForeignKey("RoleId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -354,7 +419,7 @@ namespace Portfolio.Persistence.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserRole<System.Guid>", b =>
                 {
-                    b.HasOne("Portfolio.Domain.Entities.Role", null)
+                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole<System.Guid>", null)
                         .WithMany()
                         .HasForeignKey("RoleId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -376,20 +441,33 @@ namespace Portfolio.Persistence.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("Portfolio.Domain.Entities.Technology", b =>
+            modelBuilder.Entity("Portfolio.Domain.Entities.ProjectTechnology", b =>
                 {
                     b.HasOne("Portfolio.Domain.Entities.Project", "Project")
-                        .WithMany("Technologies")
+                        .WithMany("ProjectTechnologies")
                         .HasForeignKey("ProjectId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("Portfolio.Domain.Entities.Technology", "Technology")
+                        .WithMany("ProjectTechnologies")
+                        .HasForeignKey("TechnologyId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.Navigation("Project");
+
+                    b.Navigation("Technology");
                 });
 
             modelBuilder.Entity("Portfolio.Domain.Entities.Project", b =>
                 {
-                    b.Navigation("Technologies");
+                    b.Navigation("ProjectTechnologies");
+                });
+
+            modelBuilder.Entity("Portfolio.Domain.Entities.Technology", b =>
+                {
+                    b.Navigation("ProjectTechnologies");
                 });
 #pragma warning restore 612, 618
         }

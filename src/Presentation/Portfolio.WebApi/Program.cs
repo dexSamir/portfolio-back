@@ -47,7 +47,7 @@ builder.Services.AddSwaggerGen(c =>
 
 
 builder.Services.AddDbContext<PortfolioDbContext>(opt =>
-    opt.UseNpgsql(builder.Configuration.GetConnectionString("POSTGRES_CONN")));
+    opt.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 builder.Services.AddIdentity<User, IdentityRole<Guid>>(options =>
     {
@@ -91,6 +91,9 @@ builder.Services.AddApplication();
 builder.Services.AddCache(); 
 builder.Services.AddMapper();
 builder.Services.AddExternalServices();
+
+var port = Environment.GetEnvironmentVariable("PORT") ?? "5000";
+builder.WebHost.UseUrls($"http://*:{port}");
 
 var app = builder.Build();
 

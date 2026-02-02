@@ -7,7 +7,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace Portfolio.Persistence.Migrations
 {
     /// <inheritdoc />
-    public partial class entities : Migration
+    public partial class onrender : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -72,6 +72,42 @@ namespace Portfolio.Persistence.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Projects", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Technologies",
+                columns: table => new
+                {
+                    Id = table.Column<Guid>(type: "uuid", nullable: false),
+                    Name = table.Column<string>(type: "character varying(100)", maxLength: 100, nullable: false),
+                    IsDeleted = table.Column<bool>(type: "boolean", nullable: false, defaultValue: false),
+                    CreatedTime = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
+                    UpdatedTime = table.Column<DateTime>(type: "timestamp with time zone", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Technologies", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Testimonials",
+                columns: table => new
+                {
+                    Id = table.Column<Guid>(type: "uuid", nullable: false),
+                    FullName = table.Column<string>(type: "character varying(100)", maxLength: 100, nullable: false),
+                    ProfileImageUrl = table.Column<string>(type: "text", nullable: true),
+                    Company = table.Column<string>(type: "character varying(100)", maxLength: 100, nullable: true),
+                    Position = table.Column<string>(type: "character varying(100)", maxLength: 100, nullable: true),
+                    Message = table.Column<string>(type: "character varying(1000)", maxLength: 1000, nullable: false),
+                    Rating = table.Column<int>(type: "integer", nullable: false),
+                    Status = table.Column<int>(type: "integer", nullable: false),
+                    IsDeleted = table.Column<bool>(type: "boolean", nullable: false),
+                    CreatedTime = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
+                    UpdatedTime = table.Column<DateTime>(type: "timestamp with time zone", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Testimonials", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -181,23 +217,25 @@ namespace Portfolio.Persistence.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Technologies",
+                name: "ProjectTechnologies",
                 columns: table => new
                 {
-                    Id = table.Column<Guid>(type: "uuid", nullable: false),
-                    Name = table.Column<string>(type: "character varying(100)", maxLength: 100, nullable: false),
                     ProjectId = table.Column<Guid>(type: "uuid", nullable: false),
-                    IsDeleted = table.Column<bool>(type: "boolean", nullable: false, defaultValue: false),
-                    CreatedTime = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
-                    UpdatedTime = table.Column<DateTime>(type: "timestamp with time zone", nullable: false)
+                    TechnologyId = table.Column<Guid>(type: "uuid", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Technologies", x => x.Id);
+                    table.PrimaryKey("PK_ProjectTechnologies", x => new { x.ProjectId, x.TechnologyId });
                     table.ForeignKey(
-                        name: "FK_Technologies_Projects_ProjectId",
+                        name: "FK_ProjectTechnologies_Projects_ProjectId",
                         column: x => x.ProjectId,
                         principalTable: "Projects",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_ProjectTechnologies_Technologies_TechnologyId",
+                        column: x => x.TechnologyId,
+                        principalTable: "Technologies",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -260,6 +298,16 @@ namespace Portfolio.Persistence.Migrations
                 column: "Title");
 
             migrationBuilder.CreateIndex(
+                name: "IX_ProjectTechnologies_ProjectId",
+                table: "ProjectTechnologies",
+                column: "ProjectId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_ProjectTechnologies_TechnologyId",
+                table: "ProjectTechnologies",
+                column: "TechnologyId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Technologies_IsDeleted",
                 table: "Technologies",
                 column: "IsDeleted");
@@ -270,14 +318,24 @@ namespace Portfolio.Persistence.Migrations
                 column: "Name");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Technologies_ProjectId",
-                table: "Technologies",
-                column: "ProjectId");
+                name: "IX_Testimonials_CreatedTime",
+                table: "Testimonials",
+                column: "CreatedTime");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Technologies_ProjectId_IsDeleted",
-                table: "Technologies",
-                columns: new[] { "ProjectId", "IsDeleted" });
+                name: "IX_Testimonials_Rating",
+                table: "Testimonials",
+                column: "Rating");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Testimonials_Status",
+                table: "Testimonials",
+                column: "Status");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Testimonials_Status_CreatedTime",
+                table: "Testimonials",
+                columns: new[] { "Status", "CreatedTime" });
         }
 
         /// <inheritdoc />
@@ -299,7 +357,10 @@ namespace Portfolio.Persistence.Migrations
                 name: "AspNetUserTokens");
 
             migrationBuilder.DropTable(
-                name: "Technologies");
+                name: "ProjectTechnologies");
+
+            migrationBuilder.DropTable(
+                name: "Testimonials");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");
@@ -309,6 +370,9 @@ namespace Portfolio.Persistence.Migrations
 
             migrationBuilder.DropTable(
                 name: "Projects");
+
+            migrationBuilder.DropTable(
+                name: "Technologies");
         }
     }
 }
