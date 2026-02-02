@@ -1,26 +1,47 @@
+using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
+using System.Text;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.Extensions.Configuration;
+using Microsoft.IdentityModel.Tokens;
 using Portfolio.Application.Abstraction.Services;
 using Portfolio.Domain.Entities;
 
 namespace Portfolio.Application.Services;
 
-public class AuthService(
-    UserManager<User> userManager,
-    SignInManager<User> signInManager)
-    : IAuthService
+public class AuthService(UserManager<User> userManager, IConfiguration config) : IAuthService
 {
-    public async Task<bool> LoginAsync(string email, string password)
+    public async Task<string> LoginAsync(string email, string password)
     {
-        var user = await userManager.FindByEmailAsync(email);
-        if (user == null)
-            return false;
+        var user = await userManager.FindByEmailAsync(email)
+                   ?? throw new UnauthorizedAccessException("Email or password invalid");
 
-        var result = await signInManager.PasswordSignInAsync(
-            user,
-            password,
-            isPersistent: false,
-            lockoutOnFailure: false);
+        if (!await userManager.CheckPasswordAsync(user, password))
+            throw new UnauthorizedAccessException("Email or password invalid");
 
-        return result.Succeeded;
+        var roles = await userManager.GetRolesAsync(user);
+
+        var claims = new List<Claim>
+        {
+            new Claim(JwtRegisteredClaimNames.Sub, user.Id.ToString()),
+            new Claim(JwtRegisteredClaimNames.Email, user.Email!),
+            new Claim(ClaimTypes.Name, user.UserName!)
+        };
+
+        foreach (var role in roles)
+            claims.Add(new Claim(ClaimTypes.Role, role));
+
+        var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(config["JwtSettings:SecretKey"]!));
+        var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
+
+        var token = new JwtSecurityToken(
+            issuer: config["JwtSettings:Issuer"],
+            audience: config["JwtSettings:Audience"],
+            claims: claims,
+            expires: DateTime.UtcNow.AddMinutes(int.Parse(config["JwtSettings:DurationInMinutes"]!)),
+            signingCredentials: creds
+        );
+
+        return new JwtSecurityTokenHandler().WriteToken(token);
     }
 }

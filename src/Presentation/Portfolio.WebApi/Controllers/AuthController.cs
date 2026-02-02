@@ -9,12 +9,9 @@ namespace Portfolio.WebAPI.Controllers;
 public class AuthController(IAuthService authService) : ControllerBase
 {
     [HttpPost("login")]
-    public async Task<IActionResult> Login(LoginDto dto)
+    public async Task<IActionResult> Login([FromBody] LoginDto dto)
     {
-        var success = await authService.LoginAsync(dto.Email, dto.Password);
-        if (!success)
-            return Unauthorized();
-
-        return Ok("Login successful");
+        var token = await authService.LoginAsync(dto.Email, dto.Password);
+        return Ok(new { Token = token });
     }
 }

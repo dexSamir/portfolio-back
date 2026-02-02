@@ -1,4 +1,5 @@
 using System.Linq.Expressions;
+using Portfolio.Domain.Entities;
 using Portfolio.Domain.Entities.Base;
 
 namespace Portfolio.Application.Abstraction.Repositories;

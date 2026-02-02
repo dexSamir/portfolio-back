@@ -1,24 +1,24 @@
 ﻿<Project>
   <ItemGroup>
-    <StaticWebAssetEndpoint Include="_content/Portfolio.WebApi/projects/baydyhet.gfk.jpeg">
+    <StaticWebAssetEndpoint Include="_content/Portfolio.WebAPI/projects/baydyhet.gfk.jpeg">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\projects\baydyhet.gfk.jpeg'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
       <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-Xhc3I4eRGQXOchAJhYJA8/catbmAgnqlPo3vglUtz8g="}]]]></EndpointProperties>
       <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"105255"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022Xhc3I4eRGQXOchAJhYJA8/catbmAgnqlPo3vglUtz8g=\u0022"},{"Name":"Last-Modified","Value":"Sun, 01 Feb 2026 22:57:29 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
-    <StaticWebAssetEndpoint Include="_content/Portfolio.WebApi/projects/baydyhet.gfk.yoqq33py0z.jpeg">
+    <StaticWebAssetEndpoint Include="_content/Portfolio.WebAPI/projects/baydyhet.gfk.yoqq33py0z.jpeg">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\projects\baydyhet.gfk.jpeg'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"yoqq33py0z"},{"Name":"integrity","Value":"sha256-Xhc3I4eRGQXOchAJhYJA8/catbmAgnqlPo3vglUtz8g="},{"Name":"label","Value":"_content/Portfolio.WebApi/projects/baydyhet.gfk.jpeg"}]]]></EndpointProperties>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"yoqq33py0z"},{"Name":"integrity","Value":"sha256-Xhc3I4eRGQXOchAJhYJA8/catbmAgnqlPo3vglUtz8g="},{"Name":"label","Value":"_content/Portfolio.WebAPI/projects/baydyhet.gfk.jpeg"}]]]></EndpointProperties>
       <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"105255"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022Xhc3I4eRGQXOchAJhYJA8/catbmAgnqlPo3vglUtz8g=\u0022"},{"Name":"Last-Modified","Value":"Sun, 01 Feb 2026 22:57:29 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
-    <StaticWebAssetEndpoint Include="_content/Portfolio.WebApi/projects/woo4440n.4pv.h6fsuf58cs.jpg">
+    <StaticWebAssetEndpoint Include="_content/Portfolio.WebAPI/projects/woo4440n.4pv.h6fsuf58cs.jpg">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\projects\woo4440n.4pv.jpg'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"h6fsuf58cs"},{"Name":"integrity","Value":"sha256-2QX\u002BuURWR5A08zaNAZ6GU0tWPiOye74GVobdUNlVzkc="},{"Name":"label","Value":"_content/Portfolio.WebApi/projects/woo4440n.4pv.jpg"}]]]></EndpointProperties>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"h6fsuf58cs"},{"Name":"integrity","Value":"sha256-2QX\u002BuURWR5A08zaNAZ6GU0tWPiOye74GVobdUNlVzkc="},{"Name":"label","Value":"_content/Portfolio.WebAPI/projects/woo4440n.4pv.jpg"}]]]></EndpointProperties>
       <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"204871"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u00222QX\u002BuURWR5A08zaNAZ6GU0tWPiOye74GVobdUNlVzkc=\u0022"},{"Name":"Last-Modified","Value":"Sun, 01 Feb 2026 22:50:47 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
-    <StaticWebAssetEndpoint Include="_content/Portfolio.WebApi/projects/woo4440n.4pv.jpg">
+    <StaticWebAssetEndpoint Include="_content/Portfolio.WebAPI/projects/woo4440n.4pv.jpg">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\projects\woo4440n.4pv.jpg'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
       <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-2QX\u002BuURWR5A08zaNAZ6GU0tWPiOye74GVobdUNlVzkc="}]]]></EndpointProperties>

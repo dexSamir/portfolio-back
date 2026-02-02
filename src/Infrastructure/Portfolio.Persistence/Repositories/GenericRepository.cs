@@ -1,6 +1,7 @@
 using System.Linq.Expressions;
 using Microsoft.EntityFrameworkCore;
 using Portfolio.Application.Abstraction.Repositories;
+using Portfolio.Domain.Entities;
 using Portfolio.Domain.Entities.Base;
 using Portfolio.Persistence.Contexts;
 

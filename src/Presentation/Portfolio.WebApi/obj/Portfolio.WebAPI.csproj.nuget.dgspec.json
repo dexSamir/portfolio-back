@@ -64,6 +64,10 @@
               "target": "Package",
               "version": "[12.1.1, )"
             },
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[9.0.3, )"
+            },
             "Microsoft.AspNetCore.Http": {
               "target": "Package",
               "version": "[2.3.9, )"
@@ -401,7 +405,7 @@
       "version": "1.0.0",
       "restore": {
         "projectUniqueName": "/Users/samirhebibov/Desktop/portfolio-back/src/Presentation/Portfolio.WebApi/Portfolio.WebApi.csproj",
-        "projectName": "Portfolio.WebApi",
+        "projectName": "Portfolio.WebAPI",
         "projectPath": "/Users/samirhebibov/Desktop/portfolio-back/src/Presentation/Portfolio.WebApi/Portfolio.WebApi.csproj",
         "packagesPath": "/Users/samirhebibov/.nuget/packages/",
         "outputPath": "/Users/samirhebibov/Desktop/portfolio-back/src/Presentation/Portfolio.WebApi/obj/",
