@@ -47,7 +47,7 @@ builder.Services.AddSwaggerGen(c =>
 
 
 builder.Services.AddDbContext<PortfolioDbContext>(opt =>
-    opt.UseNpgsql(builder.Configuration.GetConnectionString("PostgreSQL")));
+    opt.UseNpgsql(builder.Configuration.GetConnectionString("POSTGRES_CONN")));
 
 builder.Services.AddIdentity<User, IdentityRole<Guid>>(options =>
     {
