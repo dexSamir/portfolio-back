@@ -1,7 +1,7 @@
 FROM mcr.microsoft.com/dotnet/sdk:9.0 AS build
 WORKDIR /src
 
-COPY ["Portfolio.API.csproj", "./"]
+COPY ["Portfolio.WebAPI.csproj", "./"]
 RUN dotnet restore "Portfolio.WebAPI.csproj"
 
 COPY . .
