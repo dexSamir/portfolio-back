@@ -93,7 +93,7 @@ builder.Services.AddMapper();
 builder.Services.AddMemoryCache();
 
 var port = Environment.GetEnvironmentVariable("PORT") ?? "5001";
-builder.WebHost.UseUrls($"https://*:{port}");
+builder.WebHost.UseUrls($"http://*:{port}");
 
 var app = builder.Build();
 
@@ -101,8 +101,6 @@ using (var scope = app.Services.CreateScope())
 {
     await AdminSeed.SeedAsync(scope.ServiceProvider);
 }
-
-app.UseGlobalExceptionHandling();
 
 if (app.Environment.IsDevelopment())
 {
@@ -114,8 +112,15 @@ if (app.Environment.IsDevelopment())
         c.RoutePrefix = "swagger";
     });
 }
-app.UseDeveloperExceptionPage();
-app.UseHttpsRedirection();
+
+if (app.Environment.IsDevelopment())
+{
+    app.UseSwagger();
+    app.UseSwaggerUI();
+    app.UseDeveloperExceptionPage();
+}
+
+
 app.UseAuthorization();
 
 app.MapControllers();
