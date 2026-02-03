@@ -88,12 +88,12 @@ builder.Services.AddAuthorization(options =>
 
 builder.Services.AddPersistentServices();
 builder.Services.AddApplication();
-builder.Services.AddCache(); 
-builder.Services.AddMapper();
 builder.Services.AddExternalServices();
+builder.Services.AddMapper();
+builder.Services.AddMemoryCache();
 
-var port = Environment.GetEnvironmentVariable("PORT") ?? "5000";
-builder.WebHost.UseUrls($"http://*:{port}");
+var port = Environment.GetEnvironmentVariable("PORT") ?? "5001";
+builder.WebHost.UseUrls($"https://*:{port}");
 
 var app = builder.Build();
 

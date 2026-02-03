@@ -13,15 +13,15 @@ public class TestimonialsController(ITestimonialService service) : ControllerBas
     public async Task<IActionResult> GetApproved()
         => Ok(await service.GetApprovedAsync());
 
-    [HttpGet]
-    [Authorize(Policy = "AdminOnly")]
-    public async Task<IActionResult> GetAll()
-        => Ok(await service.GetAllAsync());
-
     [HttpGet("{status}")]
     [Authorize(Policy = "AdminOnly")]
     public async Task<IActionResult> GetByStatus(ETestimonialStatus status)
         => Ok(await service.GetByStatusAsync(status));
+
+    [HttpGet]
+    [Authorize(Policy = "AdminOnly")]
+    public async Task<IActionResult> GetAll()
+        => Ok(await service.GetAllAsync());
 
     [HttpPost]
     public async Task<IActionResult> Create([FromForm] TestimonialCreateDto dto)

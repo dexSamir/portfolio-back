@@ -1,30 +1,35 @@
-using System.Text.Json;
-using Microsoft.Extensions.Caching.Distributed;
+using Microsoft.Extensions.Caching.Memory;
 using Portfolio.Application.Abstraction.Infrastructure;
 
 namespace Portfolio.Infrastructure.ExternalServices;
-public class CacheService(IDistributedCache cache) : ICacheService
+public class CacheService(IMemoryCache cache) : ICacheService
 {
-    public async Task<T> GetOrSetAsync<T>(string key, Func<Task<T>> getData, TimeSpan expiration)
+    public async Task<T> GetOrSetAsync<T>(
+        string key,
+        Func<Task<T>> getData,
+        TimeSpan expiration)
     {
-        var cachedData = await cache.GetStringAsync(key); 
-        
-        if(!string.IsNullOrWhiteSpace(cachedData))
-            return JsonSerializer.Deserialize<T>(cachedData)!;
+        if (cache.TryGetValue(key, out T? cachedValue))
+            return cachedValue!;
 
         var data = await getData();
-        
-        if(data is not null) 
-            await  cache.SetStringAsync(key, JsonSerializer.Serialize(data), new DistributedCacheEntryOptions
-            {
-                AbsoluteExpirationRelativeToNow = expiration 
-                
-            });
+
+        if (data is not null)
+        {
+            cache.Set(
+                key,
+                data,
+                new MemoryCacheEntryOptions
+                {
+                    AbsoluteExpirationRelativeToNow = expiration
+                });
+        }
+
         return data;
     }
-
-    public async Task RemoveAsync(string key)
+    public Task RemoveAsync(string key)
     {
-        await cache.RemoveAsync(key);
+        cache.Remove(key);
+        return Task.CompletedTask;
     }
 }

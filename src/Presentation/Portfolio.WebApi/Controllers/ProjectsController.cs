@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Portfolio.Application.Abstraction.Services;
 using Portfolio.Application.Dtos.Project;
@@ -18,24 +19,29 @@ public class ProjectsController(IProjectService service) : ControllerBase
         => Ok(await service.GetByIdAsync(id));
 
     [HttpPost]
+    [Authorize(Policy = "AdminOnly")]
     public async Task<IActionResult> Create([FromForm] ProjectCreateDto dto)
         => Ok(await service.CreateAsync(dto));
 
     [HttpPost]
+    [Authorize(Policy = "AdminOnly")]
     public async Task<IActionResult> CreateRange([FromBody] IEnumerable<ProjectCreateDto> dtos)
         => Ok(await service.CreateBulkAsync(dtos));
 
     [HttpPatch("{id}")]
+    [Authorize(Policy = "AdminOnly")]
     public async Task<IActionResult> Update(Guid id, [FromBody] ProjectUpdateDto dto)
         => Ok(await service.UpdateAsync(id, dto));
 
     [HttpDelete("{dType}")]
+    [Authorize(Policy = "AdminOnly")]
     public async Task<IActionResult> Delete([FromQuery] Guid[] ids, EDeleteType dType)
     {
         return Ok(await service.DeleteAsync(ids, dType));
     }
 
     [HttpPost]
+    [Authorize(Policy = "AdminOnly")]
     public async Task<IActionResult> Restore([FromQuery] Guid[] ids)
         => Ok(await service.RestoreAsync(ids));
 
@@ -44,10 +50,12 @@ public class ProjectsController(IProjectService service) : ControllerBase
         => Ok(await service.GetByTechnologyAsync(technologyIds));
 
     [HttpPost]
+    [Authorize(Policy = "AdminOnly")]
     public async Task<IActionResult> AddTechnologies([FromQuery] Guid projectId, [FromBody] IEnumerable<Guid> techIds)
         => Ok(await service.AddTechnologiesAsync(projectId, techIds));
 
     [HttpPost]
+    [Authorize(Policy = "AdminOnly")]
     public async Task<IActionResult> RemoveTechnologies([FromQuery] Guid projectId, [FromBody] IEnumerable<Guid> techIds)
         => Ok(await service.RemoveTechnologiesAsync(projectId, techIds));
 }

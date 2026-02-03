@@ -8,19 +8,9 @@ public static class ExternalServiceRegistration
 {
     public static IServiceCollection AddExternalServices(this IServiceCollection services)
     {
+        services.AddMemoryCache();
         services.AddScoped<ICacheService, CacheService>();
         services.AddScoped<IFileService, FileService>(); 
-        return services;
-    }
-    
-    public static IServiceCollection AddCache(this IServiceCollection services)
-    {
-        services.AddStackExchangeRedisCache(options =>
-        {
-            options.Configuration = "localhost:6379";
-            options.InstanceName = "Portfolio_";
-        });
-
         return services;
     }
     

@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Portfolio.Application.Abstraction.Services;
 using Portfolio.Application.Dtos.Technology;
@@ -22,24 +23,28 @@ public class TechnologiesController(ITechnologyService service) : ControllerBase
     }
 
     [HttpPost]
+    [Authorize(Policy = "AdminOnly")]
     public async Task<IActionResult> Create([FromBody] TechnologyCreateDto dto)
     {
         return Ok(await service.CreateAsync(dto));
     }
 
     [HttpPost]
+    [Authorize(Policy = "AdminOnly")]
     public async Task<IActionResult> CreateRange( IEnumerable<TechnologyCreateDto> dtos)
     {
         return Ok(await service.CreateBulkAsync(dtos)); 
     }
 
     [HttpPatch("{id}")]
+    [Authorize(Policy = "AdminOnly")]
     public async Task<IActionResult> Update(Guid id,  [FromBody] TechnologyUpdateDto dto)
     {
         return Ok(await service.UpdateAsync(id, dto)); 
     }
 
     [HttpDelete("{dType}")]
+    [Authorize(Policy = "AdminOnly")]
     public async Task<IActionResult> Delete([FromQuery] Guid[] ids, EDeleteType dType)
     {
         return Ok(await service.DeleteAsync(ids, dType));

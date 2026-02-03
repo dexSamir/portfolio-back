@@ -165,4 +165,4 @@
 /Users/samirhebibov/Desktop/portfolio-back/src/Presentation/Portfolio.WebApi/bin/Debug/net9.0/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 /Users/samirhebibov/Desktop/portfolio-back/src/Presentation/Portfolio.WebApi/bin/Debug/net9.0/Microsoft.IdentityModel.Tokens.dll
 /Users/samirhebibov/Desktop/portfolio-back/src/Presentation/Portfolio.WebApi/bin/Debug/net9.0/System.IdentityModel.Tokens.Jwt.dll
-/Users/samirhebibov/Desktop/portfolio-back/src/Presentation/Portfolio.WebApi/obj/Debug/net9.0/Portfoli.1BF16BEA.Up2Date
+/Users/samirhebibov/Desktop/portfolio-back/src/Presentation/Portfolio.WebAPI/obj/Debug/net9.0/Portfoli.43716825.Up2Date
