@@ -111,6 +111,10 @@ builder.WebHost.UseUrls($"http://*:{port}");
 
 var app = builder.Build();
 
+app.UseHttpsRedirection();
+
+app.UseStaticFiles(); 
+
 app.UseCors("AllowFrontend");
 
 app.UseAuthentication();
