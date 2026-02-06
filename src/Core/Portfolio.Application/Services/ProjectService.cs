@@ -15,11 +15,15 @@ public class ProjectService(IProjectRepository repo, IMapper mapper, ICacheServi
     public async Task<IEnumerable<ProjectGetDto>> GetAllAsync()
     {
         var projects = await cache.GetOrSetAsync(
-            CacheKeys.Project,
-            () => repo.GetAllAsync(
+            CacheKeys.Project, () => repo.GetAllAsync(
                 asNoTrack: true,
                 predicate: null,
-                orderBy: null
+                orderBy: null,
+                includes: new[]
+                {
+                    "ProjectTechnologies",
+                    "ProjectTechnologies.Technology"
+                }
             ),
             TimeSpan.FromMinutes(5)
         );
