@@ -10,7 +10,7 @@ namespace Portfolio.WebAPI.Controllers;
 public class AuthController(IAuthService authService) : ControllerBase
 {
     [HttpPost("login")]
-    [Authorize(Policy = "AdminOnly")]
+    [AllowAnonymous]
     public async Task<IActionResult> Login([FromBody] LoginDto dto)
     {
         var token = await authService.LoginAsync(dto.Email, dto.Password);
