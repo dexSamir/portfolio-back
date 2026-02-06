@@ -14,6 +14,21 @@ using Portfolio.WebAPI.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowFrontend", policy =>
+    {
+        policy
+            .WithOrigins(
+                "https://samirhabibov.netlify.app",
+                "http://localhost:5173"
+            )
+            .AllowAnyHeader()
+            .AllowAnyMethod()
+            .AllowCredentials();
+    });
+});
+
 builder.Services.AddControllers(); 
 builder.Services.AddEndpointsApiExplorer();
 
@@ -97,6 +112,8 @@ builder.WebHost.UseUrls($"http://*:{port}");
 
 var app = builder.Build();
 
+app.UseCors("AllowFrontend");
+
 using (var scope = app.Services.CreateScope())
 {
     await AdminSeed.SeedAsync(scope.ServiceProvider);
@@ -120,6 +137,7 @@ if (app.Environment.IsDevelopment())
     app.UseDeveloperExceptionPage();
 }
 
+app.UseCors("AllowFrontend");
 
 app.UseAuthorization();
 
