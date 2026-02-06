@@ -30,7 +30,7 @@ public class ProjectsController(IProjectService service) : ControllerBase
 
     [HttpPatch("{id}")]
     [Authorize(Policy = "AdminOnly")]
-    public async Task<IActionResult> Update(Guid id, [FromBody] ProjectUpdateDto dto)
+    public async Task<IActionResult> Update(Guid id, [FromForm] ProjectUpdateDto dto)
         => Ok(await service.UpdateAsync(id, dto));
 
     [HttpDelete("{dType}")]
