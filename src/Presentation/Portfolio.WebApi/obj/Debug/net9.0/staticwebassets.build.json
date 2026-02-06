@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "iah0iYU4ughAKzTD00na5QzDMdxzpPKW4lQqLT27umQ=",
+  "Hash": "HeYw1qybR9RcL+tnLdQJLqMzSx//kHyNipVzJCMdScY=",
   "Source": "Portfolio.WebAPI",
   "BasePath": "_content/Portfolio.WebAPI",
   "Mode": "Default",
@@ -16,6 +16,27 @@
     }
   ],
   "Assets": [
+    {
+      "Identity": "/Users/samirhebibov/Desktop/portfolio-back/src/Presentation/Portfolio.WebApi/wwwroot/projects/1twj10nf.ere.jpeg",
+      "SourceId": "Portfolio.WebAPI",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/samirhebibov/Desktop/portfolio-back/src/Presentation/Portfolio.WebAPI/wwwroot/",
+      "BasePath": "_content/Portfolio.WebAPI",
+      "RelativePath": "projects/1twj10nf.ere#[.{fingerprint}]?.jpeg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "yoqq33py0z",
+      "Integrity": "Xhc3I4eRGQXOchAJhYJA8/catbmAgnqlPo3vglUtz8g=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/projects/1twj10nf.ere.jpeg"
+    },
     {
       "Identity": "/Users/samirhebibov/Desktop/portfolio-back/src/Presentation/Portfolio.WebApi/wwwroot/projects/baydyhet.gfk.jpeg",
       "SourceId": "Portfolio.WebAPI",
@@ -60,6 +81,88 @@
     }
   ],
   "Endpoints": [
+    {
+      "Route": "projects/1twj10nf.ere.jpeg",
+      "AssetFile": "/Users/samirhebibov/Desktop/portfolio-back/src/Presentation/Portfolio.WebApi/wwwroot/projects/1twj10nf.ere.jpeg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "105255"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Xhc3I4eRGQXOchAJhYJA8/catbmAgnqlPo3vglUtz8g=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 03 Feb 2026 08:16:12 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-Xhc3I4eRGQXOchAJhYJA8/catbmAgnqlPo3vglUtz8g="
+        }
+      ]
+    },
+    {
+      "Route": "projects/1twj10nf.ere.yoqq33py0z.jpeg",
+      "AssetFile": "/Users/samirhebibov/Desktop/portfolio-back/src/Presentation/Portfolio.WebApi/wwwroot/projects/1twj10nf.ere.jpeg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "105255"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Xhc3I4eRGQXOchAJhYJA8/catbmAgnqlPo3vglUtz8g=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 03 Feb 2026 08:16:12 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "yoqq33py0z"
+        },
+        {
+          "Name": "label",
+          "Value": "projects/1twj10nf.ere.jpeg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-Xhc3I4eRGQXOchAJhYJA8/catbmAgnqlPo3vglUtz8g="
+        }
+      ]
+    },
     {
       "Route": "projects/baydyhet.gfk.jpeg",
       "AssetFile": "/Users/samirhebibov/Desktop/portfolio-back/src/Presentation/Portfolio.WebApi/wwwroot/projects/baydyhet.gfk.jpeg",

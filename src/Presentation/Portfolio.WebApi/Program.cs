@@ -24,8 +24,7 @@ builder.Services.AddCors(options =>
                 "http://localhost:5173"
             )
             .AllowAnyHeader()
-            .AllowAnyMethod()
-            .AllowCredentials();
+            .AllowAnyMethod();
     });
 });
 
@@ -114,10 +113,8 @@ var app = builder.Build();
 
 app.UseCors("AllowFrontend");
 
-using (var scope = app.Services.CreateScope())
-{
-    await AdminSeed.SeedAsync(scope.ServiceProvider);
-}
+app.UseAuthentication();
+app.UseAuthorization();
 
 if (app.Environment.IsDevelopment())
 {
@@ -126,20 +123,10 @@ if (app.Environment.IsDevelopment())
     {
         c.DocumentTitle = "Portfolio API";
         c.SwaggerEndpoint("/swagger/v1/swagger.json", "Portfolio API v1");
-        c.RoutePrefix = "swagger";
     });
-}
 
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
     app.UseDeveloperExceptionPage();
 }
-
-app.UseCors("AllowFrontend");
-
-app.UseAuthorization();
 
 app.MapControllers();
 app.Run();
