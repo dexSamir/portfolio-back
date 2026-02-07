@@ -10,15 +10,19 @@ using Portfolio.Domain.Enums;
 
 namespace Portfolio.Application.Services;
 
-public class ProjectService(IProjectRepository repo, IMapper mapper, ICacheService cache, IFileService fileService) : IProjectService
+public class ProjectService(
+    IProjectRepository repo,
+    IMapper mapper,
+    ICacheService cache,
+    ICloudinaryService cloudinary
+) : IProjectService
 {
     public async Task<IEnumerable<ProjectGetDto>> GetAllAsync()
     {
         var projects = await cache.GetOrSetAsync(
-            CacheKeys.Project, () => repo.GetAllAsync(
+            CacheKeys.Project,
+            () => repo.GetAllAsync(
                 asNoTrack: true,
-                predicate: null,
-                orderBy: null,
                 includes: new[]
                 {
                     "ProjectTechnologies",
@@ -31,151 +35,136 @@ public class ProjectService(IProjectRepository repo, IMapper mapper, ICacheServi
         return mapper.Map<IEnumerable<ProjectGetDto>>(projects);
     }
 
-
     public async Task<ProjectGetDto> GetByIdAsync(Guid id)
     {
         var data = await repo.GetFirstAsync(
-                       x=> x.Id == id,
-                       asNoTrack:true,
-                       "ProjectTechnologies.Technology")
-                   ?? throw new NotFoundException<Project>();
-        return mapper.Map<ProjectGetDto>(data); 
+            x => x.Id == id,
+            asNoTrack: true,
+            "ProjectTechnologies.Technology"
+        ) ?? throw new NotFoundException<Project>();
+
+        return mapper.Map<ProjectGetDto>(data);
     }
 
     public async Task<ProjectGetDto> CreateAsync(ProjectCreateDto dto)
     {
-        var data = mapper.Map<Project>(dto);
-        await repo.GetByIdAsync(data.Id, true, "ProjectTechnologies", "ProjectTechnologies.Technology");
-        data.CreatedTime = DateTime.UtcNow;
+        var entity = mapper.Map<Project>(dto);
+        entity.CreatedTime = DateTime.UtcNow;
 
-        if (dto?.ImageUrl != null)
-            data.ImageUrl = await fileService.ProcessImageAsync(dto.ImageUrl, "projects", "image/", 15); 
-                
-        await repo.AddAsync(data);
+        if (dto.ImageUrl != null)
+        {
+            entity.ImageUrl = await cloudinary.UploadImageAsync(
+                dto.ImageUrl,
+                "projects"
+            );
+        }
+
+        await repo.AddAsync(entity);
         await repo.SaveAsync();
-        return mapper.Map<ProjectGetDto>(data); 
+
+        await cache.RemoveAsync(CacheKeys.Project);
+
+        return mapper.Map<ProjectGetDto>(entity);
     }
 
     public async Task<IEnumerable<ProjectGetDto>> CreateBulkAsync(IEnumerable<ProjectCreateDto> dtos)
     {
-        var dtoList = dtos.ToList();
-        var data = mapper.Map<IList<Project>>(dtoList);
+        var entities = new List<Project>();
 
-        for (int i = 0; i < dtoList.Count; i++)
+        foreach (var dto in dtos)
         {
-            data[i].CreatedTime = DateTime.UtcNow;
-            if (dtos.ElementAt(i).ImageUrl != null)
+            var project = mapper.Map<Project>(dto);
+            project.CreatedTime = DateTime.UtcNow;
+
+            if (dto.ImageUrl != null)
             {
-                await repo.GetByIdAsync(data[i].Id, true, "ProjectTechnologies", "ProjectTechnologies.Technology");
-                data[i].ImageUrl = await fileService.ProcessImageAsync(dtos.ElementAt(i).ImageUrl, "projects", "image/", 15);
+                project.ImageUrl = await cloudinary.UploadImageAsync(
+                    dto.ImageUrl,
+                    "projects"
+                );
             }
+
+            entities.Add(project);
         }
 
-        await repo.AddRangeAsync(data);
+        await repo.AddRangeAsync(entities);
         await repo.SaveAsync();
-        return mapper.Map<IEnumerable<ProjectGetDto>>(data);
+        await cache.RemoveAsync(CacheKeys.Project);
+
+        return mapper.Map<IEnumerable<ProjectGetDto>>(entities);
     }
 
     public async Task<ProjectGetDto> UpdateAsync(Guid id, ProjectUpdateDto dto)
     {
-        var existing = await repo.GetFirstAsync(
-            x => x.Id == id, 
-            false, 
-            "ProjectTechnologies", 
+        var entity = await repo.GetFirstAsync(
+            x => x.Id == id,
+            asNoTrack: false,
+            "ProjectTechnologies",
             "ProjectTechnologies.Technology"
         ) ?? throw new NotFoundException<Project>();
 
-        
-        if(dto.ImageUrl != null)
-            existing.ImageUrl = await fileService.ProcessImageAsync(dto.ImageUrl, "projects", "image/", 15, existing.ImageUrl);
-        
-        existing.UpdatedTime = DateTime.UtcNow;
-        dto.ExistingImageUrl = existing.ImageUrl;
-        mapper.Map(dto, existing);
-        
-        var dtoTechIds = dto.TechnologyIds ?? new List<Guid>();
-        var currentTechIds = existing.ProjectTechnologies.Select(pt => pt.TechnologyId).ToList();
-
-        var newTechIds = dtoTechIds.Where(guid => !currentTechIds.Contains(guid)).ToList();
-        var removeTechIds = currentTechIds.Where(guid => !dtoTechIds.Contains((Guid)guid!)).ToList();
-
-        foreach (var techId in newTechIds)
+        if (dto.ImageUrl != null)
         {
-            existing.ProjectTechnologies.Add(new ProjectTechnology
+            if (!string.IsNullOrEmpty(entity.ImageUrl))
             {
-                ProjectId = existing.Id,
-                TechnologyId = techId
-            });
+                // 👇 SƏNİN DEDİYİN SƏTR – BURADA TAM DOĞRUDUR
+                await cloudinary.DeleteImageAsync(entity.ImageUrl);
+            }
+
+            entity.ImageUrl = await cloudinary.UploadImageAsync(
+                dto.ImageUrl,
+                "projects"
+            );
         }
 
+        entity.UpdatedTime = DateTime.UtcNow;
+        mapper.Map(dto, entity);
 
-        var toRemove = existing.ProjectTechnologies
-            .Where(pt => removeTechIds.Any(guid => guid == pt.TechnologyId))
-            .ToList();
-
-
-        foreach (var pt in toRemove)
-            existing.ProjectTechnologies.Remove(pt);
-
-        await repo.UpdateAsync(existing);
+        await repo.UpdateAsync(entity);
         await repo.SaveAsync();
+        await cache.RemoveAsync(CacheKeys.Project);
 
-        return mapper.Map<ProjectGetDto>(existing);
+        return mapper.Map<ProjectGetDto>(entity);
     }
-    
+
     public async Task<bool> DeleteAsync(Guid[] ids, EDeleteType dType)
     {
         if (ids == null || ids.Length == 0)
-            throw new ArgumentException("Hec bir id daxil edilmeyib!");
+            throw new ArgumentException("Heç bir id daxil edilməyib!");
 
-        var existingIds = (await repo.GetWhereAsync(x => ids.Contains(x.Id), false))
-            .Select(x => x.Id)
-            .ToArray();
+        var projects = await repo.GetWhereAsync(x => ids.Contains(x.Id), false);
 
-        if(dType == EDeleteType.Hard)
-            foreach (var id in ids)
+        if (dType == EDeleteType.Hard)
+        {
+            foreach (var project in projects)
             {
-                var data = await repo.GetByIdAsync(id, false) ?? throw new NotFoundException<Project>();
-                if(!string.IsNullOrEmpty(data.ImageUrl))
-                    await fileService.DeleteImageIfNotDefault(data.ImageUrl, "projects");
+                if (!string.IsNullOrEmpty(project.ImageUrl))
+                    await cloudinary.DeleteImageAsync(project.ImageUrl);
             }
 
-        
-        var missingIds = ids.Except(existingIds).ToArray();
-        if (missingIds.Any())
-            throw new NotFoundException<Technology>(
-                $"Products not found with ids: {string.Join(",", missingIds)}");
-
-        switch (dType)
+            await repo.HardDeleteRangeAsync(ids);
+        }
+        else if (dType == EDeleteType.Soft)
         {
-            case EDeleteType.Soft:
-                await repo.SoftDeleteRangeAsync(existingIds);
-                break;
-
-            case EDeleteType.Reverse:
-                await repo.ReverseDeleteRangeAsync(existingIds);
-                break;
-
-            case EDeleteType.Hard:
-                await repo.HardDeleteRangeAsync(existingIds);
-                break;
-
-            default:
-                throw new UnsupportedDeleteTypeException(
-                    $"Delete type '{dType}' is not supported.");
+            await repo.SoftDeleteRangeAsync(ids);
+        }
+        else if (dType == EDeleteType.Reverse)
+        {
+            await repo.ReverseDeleteRangeAsync(ids);
         }
 
-        var success = await repo.SaveAsync() > 0; 
-        
-        if(success)
+        var success = await repo.SaveAsync() > 0;
+
+        if (success)
             await cache.RemoveAsync(CacheKeys.Project);
+
         return success;
     }
 
-    
     public async Task<bool> RestoreAsync(Guid[] ids)
-        => await DeleteAsync(ids, EDeleteType.Reverse); 
-
+        => await DeleteAsync(ids, EDeleteType.Reverse);
+    
+    
     public async Task<IEnumerable<ProjectGetDto>> GetByTechnologyAsync(Guid[] technologyIds)
     {
         var techIds = technologyIds.ToList();

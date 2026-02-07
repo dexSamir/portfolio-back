@@ -11,6 +11,8 @@ public static class ExternalServiceRegistration
         services.AddMemoryCache();
         services.AddScoped<ICacheService, CacheService>();
         services.AddScoped<IFileService, FileService>(); 
+        services.AddScoped<ICloudinaryService, CloudinaryService>();
+
         return services;
     }
     

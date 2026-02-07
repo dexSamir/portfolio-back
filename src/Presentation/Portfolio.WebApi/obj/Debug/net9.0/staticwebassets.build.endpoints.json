@@ -249,6 +249,88 @@
       ]
     },
     {
+      "Route": "projects/uqntnwym.xjf.blx257g9go.png",
+      "AssetFile": "projects/uqntnwym.xjf.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "557790"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"j/fdoe+pEc0NvaZU2nm06GYafHtqCmLMsWClAmQxVfc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 07 Feb 2026 11:26:21 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "blx257g9go"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-j/fdoe+pEc0NvaZU2nm06GYafHtqCmLMsWClAmQxVfc="
+        },
+        {
+          "Name": "label",
+          "Value": "projects/uqntnwym.xjf.png"
+        }
+      ]
+    },
+    {
+      "Route": "projects/uqntnwym.xjf.png",
+      "AssetFile": "projects/uqntnwym.xjf.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "557790"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"j/fdoe+pEc0NvaZU2nm06GYafHtqCmLMsWClAmQxVfc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 07 Feb 2026 11:26:21 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-j/fdoe+pEc0NvaZU2nm06GYafHtqCmLMsWClAmQxVfc="
+        }
+      ]
+    },
+    {
       "Route": "projects/woo4440n.4pv.h6fsuf58cs.jpg",
       "AssetFile": "projects/woo4440n.4pv.jpg",
       "Selectors": [],

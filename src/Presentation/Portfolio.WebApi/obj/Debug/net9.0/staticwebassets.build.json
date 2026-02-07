@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "RS003STc9ILmizI4G5KWUgFXy3Be7m1Q9VOP0FCyqYU=",
+  "Hash": "zrNJiCH/67e8MkT58k356jvuSGhciN+nz7+qA8Scv4E=",
   "Source": "Portfolio.WebAPI",
   "BasePath": "_content/Portfolio.WebAPI",
   "Mode": "Default",
@@ -78,6 +78,27 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/projects/ibhtd0eh.gxg.png"
+    },
+    {
+      "Identity": "/Users/samirhebibov/Desktop/portfolio-back/src/Presentation/Portfolio.WebApi/wwwroot/projects/uqntnwym.xjf.png",
+      "SourceId": "Portfolio.WebAPI",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/samirhebibov/Desktop/portfolio-back/src/Presentation/Portfolio.WebAPI/wwwroot/",
+      "BasePath": "_content/Portfolio.WebAPI",
+      "RelativePath": "projects/uqntnwym.xjf#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "blx257g9go",
+      "Integrity": "j/fdoe+pEc0NvaZU2nm06GYafHtqCmLMsWClAmQxVfc=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/projects/uqntnwym.xjf.png"
     },
     {
       "Identity": "/Users/samirhebibov/Desktop/portfolio-back/src/Presentation/Portfolio.WebApi/wwwroot/projects/woo4440n.4pv.jpg",
@@ -345,6 +366,88 @@
         {
           "Name": "integrity",
           "Value": "sha256-acDrLGdsp2L6GkTPAamUcX5ntQju0wrWSB704XowWtk="
+        }
+      ]
+    },
+    {
+      "Route": "projects/uqntnwym.xjf.blx257g9go.png",
+      "AssetFile": "/Users/samirhebibov/Desktop/portfolio-back/src/Presentation/Portfolio.WebApi/wwwroot/projects/uqntnwym.xjf.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "557790"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"j/fdoe+pEc0NvaZU2nm06GYafHtqCmLMsWClAmQxVfc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 07 Feb 2026 11:26:21 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "blx257g9go"
+        },
+        {
+          "Name": "label",
+          "Value": "projects/uqntnwym.xjf.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-j/fdoe+pEc0NvaZU2nm06GYafHtqCmLMsWClAmQxVfc="
+        }
+      ]
+    },
+    {
+      "Route": "projects/uqntnwym.xjf.png",
+      "AssetFile": "/Users/samirhebibov/Desktop/portfolio-back/src/Presentation/Portfolio.WebApi/wwwroot/projects/uqntnwym.xjf.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "557790"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"j/fdoe+pEc0NvaZU2nm06GYafHtqCmLMsWClAmQxVfc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 07 Feb 2026 11:26:21 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-j/fdoe+pEc0NvaZU2nm06GYafHtqCmLMsWClAmQxVfc="
         }
       ]
     },

@@ -9,8 +9,11 @@ using Portfolio.Domain.Enums;
 
 namespace Portfolio.Application.Services;
 
-public class TestimonialService(ITestimonialRepository repo, IMapper mapper, IFileService fileService)
-    : ITestimonialService
+public class TestimonialService(
+    ITestimonialRepository repo,
+    IMapper mapper,
+    ICloudinaryService cloudinary
+) : ITestimonialService
 {
     public async Task<TestimonialGetDto> CreateAsync(TestimonialCreateDto dto)
     {
@@ -19,7 +22,12 @@ public class TestimonialService(ITestimonialRepository repo, IMapper mapper, IFi
         entity.CreatedTime = DateTime.UtcNow;
 
         if (dto.ProfileImage != null)
-            entity.ProfileImageUrl = await fileService.ProcessImageAsync(dto.ProfileImage, "testimonials", "image/", 5);
+        {
+            entity.ProfileImageUrl = await cloudinary.UploadImageAsync(
+                dto.ProfileImage,
+                "testimonials"
+            );
+        }
 
         await repo.AddAsync(entity);
         await repo.SaveAsync();
@@ -29,7 +37,11 @@ public class TestimonialService(ITestimonialRepository repo, IMapper mapper, IFi
 
     public async Task<IEnumerable<TestimonialGetDto>> GetApprovedAsync()
     {
-        var data = await repo.GetWhereAsync(t => t.Status == ETestimonialStatus.Approved, asNoTrack: true);
+        var data = await repo.GetWhereAsync(
+            x => x.Status == ETestimonialStatus.Approved,
+            asNoTrack: true
+        );
+
         return mapper.Map<IEnumerable<TestimonialGetDto>>(data);
     }
 
@@ -41,24 +53,34 @@ public class TestimonialService(ITestimonialRepository repo, IMapper mapper, IFi
 
     public async Task<IEnumerable<TestimonialGetDto>> GetByStatusAsync(ETestimonialStatus status)
     {
-        var data = await repo.GetWhereAsync(t => t.Status == status, asNoTrack: true);
+        var data = await repo.GetWhereAsync(
+            x => x.Status == status,
+            asNoTrack: true
+        );
+
         return mapper.Map<IEnumerable<TestimonialGetDto>>(data);
     }
 
     public async Task<bool> ChangeStatusAsync(Guid id, ETestimonialStatus status)
     {
-        var entity = await repo.GetByIdAsync(id, false) ?? throw new NotFoundException<Testimonial>();
+        var entity = await repo.GetByIdAsync(id, false)
+            ?? throw new NotFoundException<Testimonial>();
+
         entity.Status = status;
         await repo.UpdateAsync(entity);
+
         return await repo.SaveAsync() > 0;
     }
 
     public async Task<bool> DeleteAsync(Guid id)
     {
-        var entity = await repo.GetByIdAsync(id, false) ?? throw new NotFoundException<Testimonial>();
+        var entity = await repo.GetByIdAsync(id, false)
+            ?? throw new NotFoundException<Testimonial>();
 
         if (!string.IsNullOrEmpty(entity.ProfileImageUrl))
-            await fileService.DeleteImageIfNotDefault(entity.ProfileImageUrl, "testimonials");
+        {
+            await cloudinary.DeleteImageAsync(entity.ProfileImageUrl);
+        }
 
         await repo.HardDeleteAsync(id);
         return await repo.SaveAsync() > 0;
