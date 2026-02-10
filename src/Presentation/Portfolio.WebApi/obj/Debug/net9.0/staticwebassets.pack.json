@@ -21,24 +21,24 @@
       "PackagePath": "staticwebassets/projects/woo4440n.4pv.jpg"
     },
     {
-      "Id": "obj/Debug/net9.0/staticwebassets/msbuild.Portfolio.WebAPI.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+      "Id": "obj/Debug/net9.0/staticwebassets/msbuild.Portfolio.WebApi.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
       "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
     },
     {
-      "Id": "obj/Debug/net9.0/staticwebassets/msbuild.Portfolio.WebAPI.Microsoft.AspNetCore.StaticWebAssets.props",
+      "Id": "obj/Debug/net9.0/staticwebassets/msbuild.Portfolio.WebApi.Microsoft.AspNetCore.StaticWebAssets.props",
       "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
     },
     {
-      "Id": "obj/Debug/net9.0/staticwebassets/msbuild.build.Portfolio.WebAPI.props",
-      "PackagePath": "build\\Portfolio.WebAPI.props"
+      "Id": "obj/Debug/net9.0/staticwebassets/msbuild.build.Portfolio.WebApi.props",
+      "PackagePath": "build\\Portfolio.WebApi.props"
     },
     {
-      "Id": "obj/Debug/net9.0/staticwebassets/msbuild.buildMultiTargeting.Portfolio.WebAPI.props",
-      "PackagePath": "buildMultiTargeting\\Portfolio.WebAPI.props"
+      "Id": "obj/Debug/net9.0/staticwebassets/msbuild.buildMultiTargeting.Portfolio.WebApi.props",
+      "PackagePath": "buildMultiTargeting\\Portfolio.WebApi.props"
     },
     {
-      "Id": "obj/Debug/net9.0/staticwebassets/msbuild.buildTransitive.Portfolio.WebAPI.props",
-      "PackagePath": "buildTransitive\\Portfolio.WebAPI.props"
+      "Id": "obj/Debug/net9.0/staticwebassets/msbuild.buildTransitive.Portfolio.WebApi.props",
+      "PackagePath": "buildTransitive\\Portfolio.WebApi.props"
     }
   ],
   "ElementsToRemove": []
