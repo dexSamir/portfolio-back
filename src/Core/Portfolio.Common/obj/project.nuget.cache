@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "D37AoZAzRsg=",
+  "dgSpecHash": "WdGTW1FcLHU=",
   "success": true,
-  "projectFilePath": "/Users/samirhebibov/Desktop/portfolio-back/src/Core/Portfolio.Common/Portfolio.Common.csproj",
+  "projectFilePath": "/Users/samirhebibov/Documents/portfolio-back/src/Core/Portfolio.Common/Portfolio.Common.csproj",
   "expectedPackageFiles": [
     "/Users/samirhebibov/.nuget/packages/microsoft.aspnetcore.http.features/2.3.0/microsoft.aspnetcore.http.features.2.3.0.nupkg.sha512",
     "/Users/samirhebibov/.nuget/packages/microsoft.extensions.primitives/8.0.0/microsoft.extensions.primitives.8.0.0.nupkg.sha512"

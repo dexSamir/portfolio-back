@@ -92,11 +92,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/samirhebibov/Desktop/portfolio-back/src/Core/Portfolio.Common/Portfolio.Common.csproj",
+      "projectUniqueName": "/Users/samirhebibov/Documents/portfolio-back/src/Core/Portfolio.Common/Portfolio.Common.csproj",
       "projectName": "Portfolio.Common",
-      "projectPath": "/Users/samirhebibov/Desktop/portfolio-back/src/Core/Portfolio.Common/Portfolio.Common.csproj",
+      "projectPath": "/Users/samirhebibov/Documents/portfolio-back/src/Core/Portfolio.Common/Portfolio.Common.csproj",
       "packagesPath": "/Users/samirhebibov/.nuget/packages/",
-      "outputPath": "/Users/samirhebibov/Desktop/portfolio-back/src/Core/Portfolio.Common/obj/",
+      "outputPath": "/Users/samirhebibov/Documents/portfolio-back/src/Core/Portfolio.Common/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/samirhebibov/.nuget/NuGet/NuGet.Config"

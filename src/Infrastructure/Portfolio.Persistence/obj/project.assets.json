@@ -3768,11 +3768,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/samirhebibov/Desktop/portfolio-back/src/Infrastructure/Portfolio.Persistence/Portfolio.Persistence.csproj",
+      "projectUniqueName": "/Users/samirhebibov/Documents/portfolio-back/src/Infrastructure/Portfolio.Persistence/Portfolio.Persistence.csproj",
       "projectName": "Portfolio.Persistence",
-      "projectPath": "/Users/samirhebibov/Desktop/portfolio-back/src/Infrastructure/Portfolio.Persistence/Portfolio.Persistence.csproj",
+      "projectPath": "/Users/samirhebibov/Documents/portfolio-back/src/Infrastructure/Portfolio.Persistence/Portfolio.Persistence.csproj",
       "packagesPath": "/Users/samirhebibov/.nuget/packages/",
-      "outputPath": "/Users/samirhebibov/Desktop/portfolio-back/src/Infrastructure/Portfolio.Persistence/obj/",
+      "outputPath": "/Users/samirhebibov/Documents/portfolio-back/src/Infrastructure/Portfolio.Persistence/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/samirhebibov/.nuget/NuGet/NuGet.Config"
@@ -3788,11 +3788,11 @@
         "net9.0": {
           "targetAlias": "net9.0",
           "projectReferences": {
-            "/Users/samirhebibov/Desktop/portfolio-back/src/Core/Portfolio.Application/Portfolio.Application.csproj": {
-              "projectPath": "/Users/samirhebibov/Desktop/portfolio-back/src/Core/Portfolio.Application/Portfolio.Application.csproj"
+            "/Users/samirhebibov/Documents/portfolio-back/src/Core/Portfolio.Application/Portfolio.Application.csproj": {
+              "projectPath": "/Users/samirhebibov/Documents/portfolio-back/src/Core/Portfolio.Application/Portfolio.Application.csproj"
             },
-            "/Users/samirhebibov/Desktop/portfolio-back/src/Core/Portfolio.Domain/Portfolio.Domain.csproj": {
-              "projectPath": "/Users/samirhebibov/Desktop/portfolio-back/src/Core/Portfolio.Domain/Portfolio.Domain.csproj"
+            "/Users/samirhebibov/Documents/portfolio-back/src/Core/Portfolio.Domain/Portfolio.Domain.csproj": {
+              "projectPath": "/Users/samirhebibov/Documents/portfolio-back/src/Core/Portfolio.Domain/Portfolio.Domain.csproj"
             }
           }
         }

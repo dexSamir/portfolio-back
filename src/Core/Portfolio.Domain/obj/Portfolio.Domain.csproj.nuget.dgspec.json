@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/samirhebibov/Desktop/portfolio-back/src/Core/Portfolio.Domain/Portfolio.Domain.csproj": {}
+    "/Users/samirhebibov/Documents/portfolio-back/src/Core/Portfolio.Domain/Portfolio.Domain.csproj": {}
   },
   "projects": {
-    "/Users/samirhebibov/Desktop/portfolio-back/src/Core/Portfolio.Domain/Portfolio.Domain.csproj": {
+    "/Users/samirhebibov/Documents/portfolio-back/src/Core/Portfolio.Domain/Portfolio.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/samirhebibov/Desktop/portfolio-back/src/Core/Portfolio.Domain/Portfolio.Domain.csproj",
+        "projectUniqueName": "/Users/samirhebibov/Documents/portfolio-back/src/Core/Portfolio.Domain/Portfolio.Domain.csproj",
         "projectName": "Portfolio.Domain",
-        "projectPath": "/Users/samirhebibov/Desktop/portfolio-back/src/Core/Portfolio.Domain/Portfolio.Domain.csproj",
+        "projectPath": "/Users/samirhebibov/Documents/portfolio-back/src/Core/Portfolio.Domain/Portfolio.Domain.csproj",
         "packagesPath": "/Users/samirhebibov/.nuget/packages/",
-        "outputPath": "/Users/samirhebibov/Desktop/portfolio-back/src/Core/Portfolio.Domain/obj/",
+        "outputPath": "/Users/samirhebibov/Documents/portfolio-back/src/Core/Portfolio.Domain/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/samirhebibov/.nuget/NuGet/NuGet.Config"

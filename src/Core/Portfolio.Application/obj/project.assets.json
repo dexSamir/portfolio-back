@@ -1468,11 +1468,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/samirhebibov/Desktop/portfolio-back/src/Core/Portfolio.Application/Portfolio.Application.csproj",
+      "projectUniqueName": "/Users/samirhebibov/Documents/portfolio-back/src/Core/Portfolio.Application/Portfolio.Application.csproj",
       "projectName": "Portfolio.Application",
-      "projectPath": "/Users/samirhebibov/Desktop/portfolio-back/src/Core/Portfolio.Application/Portfolio.Application.csproj",
+      "projectPath": "/Users/samirhebibov/Documents/portfolio-back/src/Core/Portfolio.Application/Portfolio.Application.csproj",
       "packagesPath": "/Users/samirhebibov/.nuget/packages/",
-      "outputPath": "/Users/samirhebibov/Desktop/portfolio-back/src/Core/Portfolio.Application/obj/",
+      "outputPath": "/Users/samirhebibov/Documents/portfolio-back/src/Core/Portfolio.Application/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/samirhebibov/.nuget/NuGet/NuGet.Config"
@@ -1488,11 +1488,11 @@
         "net9.0": {
           "targetAlias": "net9.0",
           "projectReferences": {
-            "/Users/samirhebibov/Desktop/portfolio-back/src/Core/Portfolio.Common/Portfolio.Common.csproj": {
-              "projectPath": "/Users/samirhebibov/Desktop/portfolio-back/src/Core/Portfolio.Common/Portfolio.Common.csproj"
+            "/Users/samirhebibov/Documents/portfolio-back/src/Core/Portfolio.Common/Portfolio.Common.csproj": {
+              "projectPath": "/Users/samirhebibov/Documents/portfolio-back/src/Core/Portfolio.Common/Portfolio.Common.csproj"
             },
-            "/Users/samirhebibov/Desktop/portfolio-back/src/Core/Portfolio.Domain/Portfolio.Domain.csproj": {
-              "projectPath": "/Users/samirhebibov/Desktop/portfolio-back/src/Core/Portfolio.Domain/Portfolio.Domain.csproj"
+            "/Users/samirhebibov/Documents/portfolio-back/src/Core/Portfolio.Domain/Portfolio.Domain.csproj": {
+              "projectPath": "/Users/samirhebibov/Documents/portfolio-back/src/Core/Portfolio.Domain/Portfolio.Domain.csproj"
             }
           }
         }
